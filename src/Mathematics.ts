@@ -57,6 +57,12 @@ export default class Mathematics {
      * @since 1.0
      */
     pythagoreanTheoremConverse(hypothenuse: number, cathete1: number, cathete2: number): number {
+        if ((isNaN(hypothenuse) && isNaN(cathete1)) ||
+            (isNaN(hypothenuse) && isNaN(cathete2)) ||
+            (isNaN(cathete1) && isNaN(cathete2))) {
+            throw new Error('2 of the 3 values are expected to compute the last value.');
+        }
+
         // Hypothenuse found, then compute a cathete size, so in other case compute the hypothenuse size
         let res = 0;
         if (!isNaN(hypothenuse)) {
@@ -119,8 +125,8 @@ export default class Mathematics {
             _ab = this._crossMultiplication(_ad, _bc, _de);
          
         // We search segment AE.
-        if (_ae === 0 && _ad !== 0 && _ab !== 0 && _ac !== 0) 
-            _ae = this._crossMultiplication(_ac, _ab, _ad);
+        if (_ae === 0 && _ad !== 0 && _ab !== 0 && _ac !== 0)
+            _ae = this._crossMultiplication(_ac, _ad, _ab);
          else if (_ae === 0 && _de !== 0 && _bc !== 0 && _ac !== 0) 
             _ae = this._crossMultiplication(_ac, _de, _bc);
         
@@ -129,7 +135,7 @@ export default class Mathematics {
             _ac = this._crossMultiplication(_ae, _ab, _ad);
         else if (_ac === 0 && _de !== 0 && _bc !== 0 && _ae !== 0) 
             _ac = this._crossMultiplication(_ae, _bc, _de);
-                
+
         // We search segment DE.
         if (_de === 0 && _ad !== 0 && _ab !== 0 && _bc !== 0) 
             _de = this._crossMultiplication(_bc, _ad, _ab);
@@ -141,7 +147,6 @@ export default class Mathematics {
             _bc = this._crossMultiplication(_de, _ab, _ad);
         else if (_bc === 0 && _ae !== 0 && _ac !== 0 && _de !== 0)
             _bc = this._crossMultiplication(_de, ac, _ae);
-        
 
         return {
             "ad": _ad,
@@ -198,7 +203,7 @@ export default class Mathematics {
             opB = tmp;
         }
 
-        return(opA);
+        return Math.abs(opA);
     }
 
     /**
@@ -214,7 +219,10 @@ export default class Mathematics {
      * @since 1.0
      */
     lcmAlgorithm(a: number, b: number): number {
-        return Math.abs((a * b)/ this.euclideanAlgorithm(a, b));
+        if (a === 0 || b === 0) 
+            return 0;
+        
+        return Math.abs((a * b) / this.euclideanAlgorithm(a, b));
     }
 
     // Private functions //
