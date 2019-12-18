@@ -1,0 +1,34 @@
+{
+  "name": "@kero76/logisticae",
+  "version": "0.1.0",
+  "description": "Library who contains many algorithms about mathematics, physics, electricity, etc",
+  "main": "index.js",
+  "keywords": [
+    "algorithms",
+    "mathematics",
+    "physics",
+    "electricity"
+  ],
+  "homepage": "https://github.com/Kero76/logisticae#readme",
+  "author": "Nicolas GILLE",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kero76/logisticae.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kero76/logisticae/issues"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register ./tests/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.5.4",
+    "typedoc": "^0.15.5",
+    "typescript": "^3.7.3"
+  }
+}
