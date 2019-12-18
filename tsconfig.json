@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "lib": ["ESNext"],
+        "target": "ESNext",
+        "sourceMap": false,
+        "outDir": "built"
+    },
+    "typedocOptions": {
+        "mode": "files",
+        "out": "docs"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "**/*.ts"
+    ]
+}
