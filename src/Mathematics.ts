@@ -2,21 +2,26 @@
  * Class who contains all elements relatives to the Mathematics sciences.
  * 
  * @author Nicolas GILLE <nic.gille@gmail.com>
- * @since 1.0
+ * @since 0.1.0
  * @version 1.0
  * @license MIT
  */
 export default class Mathematics {
 
-    // Value used to mark the square value.
-    readonly square: number = 2;
+    /**
+     * Square value.
+     * 
+     * @static
+     */ 
+    static readonly SQUARE: number = 2;
 
     /**
      * Default constructor of the class.
      * 
      * @constructor
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
     constructor() {}
 
@@ -25,41 +30,46 @@ export default class Mathematics {
      * 
      * @param {number} hypothenuse 
      *  Hypothenuse of the potential right triangle
-     * @param {number} cathete1 
-     *  First cathere of the potential right triangle.
-     * @param {number} cathete2 
-     *  Seconde cathere of the potential right triangle.
-     * @returns 
+     * @param {number} cathetus1 
+     *  First cathetus of the potential right triangle.
+     * @param {number} cathetus2 
+     *  Seconde cathetus of the potential right triangle.
+     * @returns {boolean}
      *  A boolean to indicate if the triangle is right or not.
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
-    pythagoreanTheorem(hypothenuse: number, cathete1: number, cathete2: number): boolean {
-        const squareHypothenuse = Math.pow(hypothenuse, this.square);
-        const squareCathetuses = Math.pow(cathete1, this.square) + 
-                                 Math.pow(cathete2, this.square);
+    pythagoreanTheorem(hypothenuse: number, cathetus1: number, cathetus2: number): boolean {
+        const squareHypothenuse = Math.pow(hypothenuse, Mathematics.SQUARE);
+        const squareCathetuses = Math.pow(cathetus1, Mathematics.SQUARE) + 
+                                 Math.pow(cathetus2, Mathematics.SQUARE);
 
         return (squareHypothenuse === squareCathetuses);
     }
 
     /**
      * Compute the thirds side of a right triangle.
+     * To this, get two sizes to compute the last size.
      * 
      * @param {number} hypothenuse 
-     *  Potential hypothenuse of the triangle.
-     * @param {number} cathete1 
-     *  First size of the triangle.
-     * @param {number} cathete2 
-     *  Seconde side of the triangle.
-     * @returns
+     *  Hypothenuse of the triangle.
+     * @param {number} cathetus1 
+     *  First side of the triangle.
+     * @param {number} cathetus2 
+     *  Second side of the triangle.
+     * @returns {number}
      *  The size of the third value of the right triangle.
+     * @throws {Error} 
+     *  Will throw if 2 of the 3 values expected are NaN.
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
-    pythagoreanTheoremConverse(hypothenuse: number, cathete1: number, cathete2: number): number {
-        if ((isNaN(hypothenuse) && isNaN(cathete1)) ||
-            (isNaN(hypothenuse) && isNaN(cathete2)) ||
-            (isNaN(cathete1) && isNaN(cathete2))) {
+    pythagoreanTheoremConverse(hypothenuse: number, cathetus1: number, cathetus2: number): number {
+        if ((isNaN(hypothenuse) && isNaN(cathetus1)) ||
+            (isNaN(hypothenuse) && isNaN(cathetus2)) ||
+            (isNaN(cathetus1) && isNaN(cathetus2))) {
             throw new Error('2 of the 3 values are expected to compute the last value.');
         }
 
@@ -67,15 +77,15 @@ export default class Mathematics {
         let res = 0;
         if (!isNaN(hypothenuse)) {
             // First size is empty, so compute it then compute the second size.
-            if (!isNaN(cathete1)) {
-                const _cathete = Math.pow(hypothenuse, this.square) - Math.pow(cathete1, this.square);
+            if (!isNaN(cathetus1)) {
+                const _cathete = Math.pow(hypothenuse, Mathematics.SQUARE) - Math.pow(cathetus1, Mathematics.SQUARE);
                 res = Math.sqrt(_cathete);
             } else {
-                const _cathete = Math.pow(hypothenuse, this.square) - Math.pow(cathete2, this.square);
+                const _cathete = Math.pow(hypothenuse, Mathematics.SQUARE) - Math.pow(cathetus2, Mathematics.SQUARE);
                 res = Math.sqrt(_cathete);
             }
         } else {
-            const _hypothenuse = Math.pow(cathete1, this.square) + Math.pow(cathete2, this.square);
+            const _hypothenuse = Math.pow(cathetus1, Mathematics.SQUARE) + Math.pow(cathetus2, Mathematics.SQUARE);
             res = Math.sqrt(_hypothenuse);
         }
 
@@ -83,7 +93,7 @@ export default class Mathematics {
     }
 
     /**
-     * Application of the Thales Theorem.
+     * Application of the Thales Theorem used to compute 2 of the 6 side's size missings.
      * 
      * @param {number} ad 
      *  Length of the segment AD.
@@ -97,12 +107,12 @@ export default class Mathematics {
      *  Length of the segment DE.
      * @param {number} bc 
      *  Length of the segment BC.
-     * @returns 
-     *  An object with the length of each segments expected as an associative array.
+     * @returns {object}
+     *  An object with the length of each segments expected as an associative array with 
+     * the name of the segment as *key* and the size of the segment as *value*.
      * 
-     * @see _crossMultiplication
-     * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
     interceptTheorem(ad: number, ab: number, ae: number, ac: number, de: number, bc: number): object {
         let _ad = isNaN(ad) ? 0 : ad;
@@ -171,26 +181,28 @@ export default class Mathematics {
      *  Length of segment AC.
      * @param {number} precision 
      *  Precision of the result excepted.
-     * @returns 
+     * @returns {boolean}
      *  A boolean to indicate if the segment [DE] and [BC] are parallel or not.
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
     interceptTheoremConverse(ad: number, ab: number, ae: number, ac: number, precision: number = 100): boolean {
         return (Math.round((ad / ab) * precision) / precision) === (Math.round((ae / ac) * precision) / precision);
     }
 
     /**
-     * Euclidean algorithm to compute the gcd.
+     * Euclidean algorithm to compute the Greatest Common Divisor or GCD.
      * 
      * @param {number} opA 
-     *  First operande of the operation.
+     *  First operand of the operation.
      * @param {number} opB 
-     *  Seconde operande of the operation.
-     * @returns 
-     *  The greatest common divisor between the operand A et operand B. 
+     *  Second operand of the operation.
+     * @returns {number} 
+     *  The greatest common divisor between the operand A et operand B.
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
     euclideanAlgorithm(a: number, b: number): number {
         var opA = a;
@@ -207,16 +219,17 @@ export default class Mathematics {
     }
 
     /**
-     * Get the Least Common Multiple of two numbers.
+     * Get the Least Common Multiple (LCM) of two numbers.
      * 
      * @param {number} a 
      *  A number.
      * @param {number} b 
      *  Another number.
-     * @returns 
+     * @returns {number}
      *  The least common multiple between a and b.
      * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */
     lcmAlgorithm(a: number, b: number): number {
         if (a === 0 || b === 0) 
@@ -227,8 +240,9 @@ export default class Mathematics {
 
     // Private functions //
     /**
-     * Compute the cross multiplication.
+     * Compute a cross multiplication.
      * 
+     * @ignore
      * @private 
      * 
      * @param {number} a 
@@ -237,14 +251,14 @@ export default class Mathematics {
      *  Second operand to multiply with a.
      * @param {number} c 
      *  Third operand to divide result of a * b.
-     * @returns 
+     * @returns {number}
      *  The fourth operand of the cross multiplication.
      * 
      * @see interceptTheorem
-     * 
-     * @since 1.0
+     * @since 0.1.0
+     * @version 1.0
      */ 
-    _crossMultiplication(a: number, b: number, c: number): number {
+    private _crossMultiplication(a: number, b: number, c: number): number {
         return (a * b) / c;
     }
 }
