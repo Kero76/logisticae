@@ -1,12 +1,12 @@
 /**
- * An enum which represent all enum units can be found in project.
+ * An interface which represent the instance of each EnumUnit implementation.
  * 
  * @author Nicolas GILLE <nic.gille@gmail.com>
  * @since 0.2.0
  * @version 1.0
  * @license MIT
  */
-interface EnumUnit {}
+interface EnumUnit { }
 
 /**
  * DistanceUnit is an "enum" like which represent all distances unit 
@@ -67,7 +67,7 @@ export class DistanceUnit implements EnumUnit {
      * @since 0.2.0
      * @version 1.0
      */
-    public static get(symbol: string): DistanceUnit {
+    public static value(symbol: string): DistanceUnit {
         return DistanceUnit.AllValues[symbol];
     }
 };
@@ -130,7 +130,7 @@ export class LiterUnit implements EnumUnit {
     * @since 0.2.0
     * @version 1.0
     */
-   public static get(symbol: string): LiterUnit {
+   public static value(symbol: string): LiterUnit {
        return LiterUnit.AllValues[symbol];
    }
     
@@ -194,7 +194,7 @@ export class WeightUnit implements EnumUnit {
      * @since 0.2.0
      * @version 1.0
      */
-    public static get(symbol: string): WeightUnit {
+    public static value(symbol: string): WeightUnit {
         return WeightUnit.AllValues[symbol];
     }
 };
