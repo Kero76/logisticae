@@ -37,4 +37,108 @@ describe('Physics', () => {
         });
     });
 
+    describe('Voltage formula', () => {
+        describe('computeVoltageFromPowerAndIntensity', () => {
+            it('Should return 2V', () => {
+                const result = physics.computeVoltageFromPowerAndIntensity(10, 5);
+    
+                assert.strictEqual(result, 2);
+            });
+        });
+    
+        describe('computeVoltageFromResistanceAndIntensity', () => {
+            it('Should return 1V', () => {
+                const result = physics.computeVoltageFromResistanceAndIntensity(0.5, 2);
+    
+                assert.strictEqual(result, 1);
+            });
+        });
+    
+        describe('computeVoltageFromPowerAndResistance', () => {
+            it('Should return 10V', () => {
+                const result = physics.computeVoltageFromPowerAndResistance(10, 10);
+    
+                assert.strictEqual(result, 10);
+            });
+        });
+    });
+
+    describe('Intensity formula', () => {
+        describe('computeIntensityFromPowerAndVoltage', () => {
+            it('Should return 2A', () => {
+                const result = physics.computeIntensityFromPowerAndVoltage(50, 25);
+    
+                assert.strictEqual(result, 2);
+            });
+        });
+    
+        describe('computeIntensityFromVoltageAndResistance', () => {
+            it('Should return 25A', () => {
+                const result = physics.computeIntensityFromVoltageAndResistance(50, 2);
+    
+                assert.strictEqual(result, 25);
+            });
+        });
+    
+        describe('computeIntensityFromPowerAndResistance', () => {
+            it('Should return 3A', () => {
+                const result = physics.computeIntensityFromPowerAndResistance(81, 9);
+                
+                assert.strictEqual(result, 3);
+            });
+        });
+    });
+
+    describe('Power formula', () => {
+        describe('computePowerFromVoltageAndIntensity', () => {
+            it('Should return 250W', () => {
+                const result = physics.computePowerFromVoltageAndIntensity(25, 10);
+
+                assert.strictEqual(result, 250);
+            });
+        });
+
+        describe('computePowerFromResistanceAndIntensity', () => {
+            it('Should return 1000W', () => {
+                const result = physics.computePowerFromResistanceAndIntensity(10, 10);
+
+                assert.strictEqual(result, 1000);
+            });
+        });
+
+        describe('computePowerFromVoltageAndResistance', () => {
+            it('Should return 1W', () => {
+                const result = physics.computePowerFromVoltageAndResistance(2, 4);
+
+                assert.strictEqual(result, 1);
+            });
+        });
+    });
+
+    describe('Resistance formula', () => {
+        describe('computeResistanceFromVoltageAndIntensity', () => {
+            it('Should return 9 ohm', () => {
+                const result = physics.computeResistanceFromVoltageAndIntensity(81, 9);
+
+                assert.strictEqual(result, 9);
+            });
+        });
+
+        describe('computeResistanceFromVoltageAndPower', () => {
+            it('Should return 24 ohm', () => {
+                const result = physics.computeResistanceFromVoltageAndPower(5, 2);
+
+                assert.strictEqual(result, 12.5);
+            });
+        });
+
+        describe('computeResistanceFromPowerAndIntensity', () => {
+            it('Should return 0.4 ohm', () => {
+                const result = physics.computeResistanceFromPowerAndIntensity(10, 5);
+
+                assert.strictEqual(result, 0.4);
+            });
+        });
+    });
+
 })
