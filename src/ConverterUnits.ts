@@ -6,7 +6,7 @@
  * @version 1.0
  * @license MIT
  */
-interface EnumUnit { }
+export interface EnumUnit { }
 
 /**
  * DistanceUnit is an "enum" like which represent all distances unit 
