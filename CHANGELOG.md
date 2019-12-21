@@ -1,4 +1,11 @@
 # Changelog 
+ 
+## V0.2.0 - Physicae update 
+
+### Features 
+
+- Implementation of a simple converter to convert distance, liter or weight unit into another one.
+- Implementation of the Ohm's law.
 
 ## V0.1.0 - Mathematicae update
 
