@@ -25,5 +25,27 @@ describe('Strings', () => {
         });
     });
 
+    describe('palindrome', () => {
+        it('Should return true because the case sensitive is not checked for the text "Ah, Satan sees Natasha"', () => {
+            const result = strings.palindrome("Ah, Satan sees Natasha");
+
+            assert.isTrue(result);
+        });
+        it('Should return false because the case sensitive is checked for the text "Ah, Satan sees Natasha"', () => {
+            const result = strings.palindrome("Ah, Satan sees Natasha", true);
+
+            assert.isFalse(result);
+        });
+        it('Should return false because the text isn\'t a palindrome', () => {
+            const result = strings.palindrome("Don't nad.");
+
+            assert.isFalse(result);
+        });
+        it('Should return true with a text who composed only by number.', () => {
+            const result = strings.palindrome("1 2 3 4 5 4 3 2 1");
+
+            assert.isTrue(result);
+        });
+    });
 
 });
