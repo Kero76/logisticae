@@ -1,6 +1,6 @@
 {
   "name": "@kero76/logisticae",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Library who contains many algorithms about mathematics, physics, electricity, etc",
   "main": "index.js",
   "keywords": [
