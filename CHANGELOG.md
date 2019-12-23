@@ -1,4 +1,11 @@
 # Changelog 
+
+## V0.3.0 - Stringae update
+
+### Features
+
+- Implementation of an algorithm to reverse a text.
+- Implementation of an algorithm to check if a text is a palindrome.
  
 ## V0.2.0 - Physicae update 
 
