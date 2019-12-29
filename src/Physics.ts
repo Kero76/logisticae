@@ -1,4 +1,5 @@
 import { EnumUnit, DistanceUnit, LiterUnit, WeightUnit, DegreeUnit } from "./ConverterUnits";
+import MathHelper from './helpers/MathHelper';
 
 /**
  * Class who contains all elements relatives to the Physics sciences.
@@ -70,29 +71,29 @@ export default class Physics {
     convertDegree(value: number, initialUnit: EnumUnit, targetUnit: EnumUnit) {
         if (initialUnit instanceof DegreeUnit && targetUnit instanceof DegreeUnit) {
             // Kelvin to another unit.
-            if (initialUnit.symbol == DegreeUnit.KELVIN) {
-                if (targetUnit.symbol == DegreeUnit.CELSIUS) {
-                    return value + Physics.ABSOLUTE_ZERO; 
+            if (initialUnit.symbol == DegreeUnit.KELVIN.symbol) {
+                if (targetUnit.symbol == DegreeUnit.CELSIUS.symbol) {
+                    return MathHelper.floor(value + Physics.ABSOLUTE_ZERO); 
                 } else {
-                    return value * 1.8 - 459.67;
+                    return MathHelper.floor(value * 1.8 - 459.67);
                 }
             }
 
             // Celsius to another unit.
-            else if (initialUnit.symbol == DegreeUnit.CELSIUS) {
-                if (targetUnit.symbol == DegreeUnit.KELVIN) {
+            else if (initialUnit.symbol == DegreeUnit.CELSIUS.symbol) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
                     return value - Physics.ABSOLUTE_ZERO; 
                 } else {
-                    return value * 1.8 + 32;
+                    return MathHelper.floor(value * 1.8 + 32);
                 }
             }
 
             // Fahrenheit to another unit.
-            else if (initialUnit.symbol == DegreeUnit.FAHRENHEIT) {
-                if (targetUnit.symbol == DegreeUnit.KELVIN) {
-                    return (value + 459.15) / 1.8; 
+            else if (initialUnit.symbol == DegreeUnit.FAHRENHEIT.symbol) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
+                    return MathHelper.floor((value + 459.15) / 1.8); 
                 } else {
-                    return (value - 32) / 1.8;
+                    return MathHelper.floor((value - 32) / 1.8);
                 }
             }
         }

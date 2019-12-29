@@ -1,5 +1,5 @@
 import Physics from '../src/Physics';
-import { DistanceUnit, LiterUnit, WeightUnit } from '../src/ConverterUnits';
+import { DistanceUnit, LiterUnit, WeightUnit, DegreeUnit } from '../src/ConverterUnits';
 import { assert, expect, should } from 'chai';
 import 'mocha';
 
@@ -60,6 +60,41 @@ describe('Physics', () => {
     
                 assert.strictEqual(result, 10);
             });
+        });
+    });
+    
+    describe('convertDegree', () => {
+        it('Should convert 10°C into Fahrenheit', () => {
+            const result = physics.convertDegree(10, DegreeUnit.CELSIUS, DegreeUnit.FAHRENHEIT);
+
+            assert.strictEqual(result, 50);
+        });
+        it('Should convert 10°C into Kelvin', () => {
+            const result = physics.convertDegree(10, DegreeUnit.CELSIUS, DegreeUnit.KELVIN);
+
+            assert.strictEqual(result, 283.15);
+        });
+
+        it('Should convert 50°F into Celsius', () => {
+            const result = physics.convertDegree(50, DegreeUnit.FAHRENHEIT, DegreeUnit.CELSIUS);
+
+            assert.strictEqual(result, 10);
+        });
+        it('Should convert 50°F into Kelvin', () => {
+            const result = physics.convertDegree(50, DegreeUnit.FAHRENHEIT, DegreeUnit.KELVIN);
+
+            assert.strictEqual(result, 282.86);
+        });
+
+        it('Should convert 100°K into Celsius', () => {
+            const result = physics.convertDegree(100, DegreeUnit.KELVIN, DegreeUnit.CELSIUS);
+
+            assert.strictEqual(result, -173.15);
+        });
+        it('Should convert 100°K into Fahrenheit', () => {
+            const result = physics.convertDegree(100, DegreeUnit.KELVIN, DegreeUnit.FAHRENHEIT);
+
+            assert.strictEqual(result, -279.67);
         });
     });
 
