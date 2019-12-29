@@ -1,5 +1,11 @@
 # Changelog 
 
+## V0.4.0 - Unnamed update
+
+### Features
+
+- Add degree converter to convert Celsius, Fahrenheint or Kelvin.
+
 ## V0.3.0 - Stringae update
 
 ### Features
