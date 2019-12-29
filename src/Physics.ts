@@ -1,14 +1,22 @@
-import { EnumUnit, DistanceUnit, LiterUnit, WeightUnit } from "./ConverterUnits";
+import { EnumUnit, DistanceUnit, LiterUnit, WeightUnit, DegreeUnit } from "./ConverterUnits";
 
 /**
  * Class who contains all elements relatives to the Physics sciences.
  * 
  * @author Nicolas GILLE <nic.gille@gmail.com>
  * @since 0.2.0
- * @version 1.0
+ * @version 1.1
  * @license MIT
  */
 export default class Physics {
+
+    /**
+     * Value of the absolute zero in kelvin.
+     * 
+     * @since 0.4.0
+     * @version 1.0
+     */
+    static ABSOLUTE_ZERO = -273.15;
 
     /**
      * Constructor of the Physics objects.
@@ -22,7 +30,7 @@ export default class Physics {
      * Convert a value from a weight, a distance or a liter unit into an another unit.
      * 
      * @param {number} value 
-     *  Value of the initial unit to convert. In the example define 
+     *  Value of the initial unit to convert. 
      * @param {EnumUnit} initialUnit 
      *  The initial unit. 
      * @param {EnumUnit} targetUnit 
@@ -41,6 +49,54 @@ export default class Physics {
             (initialUnit instanceof WeightUnit && targetUnit instanceof WeightUnit))
             return (value * initialUnit.value) / targetUnit.value;
         else
+            throw new Error("Unit not implemented in converter.");
+    }
+
+    /**
+     * Convert a temperature to another degrees unit.
+     * 
+     * @param {number} value 
+     *  Value of the initial unit to convert.
+     * @param {EnumUnit} initialUnit 
+     *  The initial unit. 
+     * @param {EnumUnit} targetUnit 
+     *  The target unit.
+     * @returns {number}
+     *  A number which represent the value for the targetUnit.
+     * 
+     * @since 0.4.0
+     * @version 1.0
+     */
+    convertDegree(value: number, initialUnit: EnumUnit, targetUnit: EnumUnit) {
+        if (initialUnit instanceof DegreeUnit && targetUnit instanceof DegreeUnit) {
+            // Kelvin to another unit.
+            if (initialUnit.symbol == DegreeUnit.KELVIN) {
+                if (targetUnit.symbol == DegreeUnit.CELSIUS) {
+                    return value + Physics.ABSOLUTE_ZERO; 
+                } else {
+                    return value * 1.8 - 459.67;
+                }
+            }
+
+            // Celsius to another unit.
+            else if (initialUnit.symbol == DegreeUnit.CELSIUS) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN) {
+                    return value - Physics.ABSOLUTE_ZERO; 
+                } else {
+                    return value * 1.8 + 32;
+                }
+            }
+
+            // Fahrenheit to another unit.
+            else if (initialUnit.symbol == DegreeUnit.FAHRENHEIT) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN) {
+                    return (value + 459.15) / 1.8; 
+                } else {
+                    return (value - 32) / 1.8;
+                }
+            }
+        }
+        else 
             throw new Error("Unit not implemented in converter.");
     }
 

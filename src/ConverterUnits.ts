@@ -198,3 +198,60 @@ export class WeightUnit implements EnumUnit {
         return WeightUnit.AllValues[symbol];
     }
 };
+
+/**
+ * DegreeUnit is an "enum" like which represent all degrees unit 
+ * available in the unit converter.
+ * 
+ * @author Nicolas GILLE <nic.gille@gmail.com>
+ * @since 0.4.0
+ * @version 1.0
+ * @license MIT
+ * 
+ * @implements EnumUnit
+ */
+export class DegreeUnit implements EnumUnit {
+
+    /**
+     * Contains all value of the enum.
+     * 
+     * @ignore
+     * @private
+     */
+    private static AllValues: {[name: string]: DegreeUnit} = {};
+
+    static readonly KELVIN = new DegreeUnit("K");
+    static readonly CELSIUS = new DegreeUnit("C");
+    static readonly FAHRENHEIT = new DegreeUnit("F");
+
+    /**
+     * Private constructor who fill the content of the "enum".
+     * 
+     * @ignore
+     * @private
+     * 
+     * @param symbol {string}
+     *  Symbol of the unit.
+     * 
+     * @since 0.2.0
+     * @version 1.0
+     */
+    private constructor(public readonly symbol?: string) {
+        DegreeUnit.AllValues[symbol] = this;
+    }
+
+    /**
+     * Get a specific value of the enum.
+     * 
+     * @param symbol {string}
+     *  The name of the unit expected.
+     * @returns {DegreeUnit}
+     *  The DegreeUnit expected.
+     * 
+     * @since 0.2.0
+     * @version 1.0
+     */
+    public static value(symbol: string): DegreeUnit {
+        return DegreeUnit.AllValues[symbol];
+    }
+};
