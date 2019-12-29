@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/@kero76/logisticae)](https://www.npmjs.com/package/@kero76/logisticae)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Kero76/logisticae/blob/master/LICENSE)
 
 # Logisticae
 
@@ -18,6 +18,7 @@ Library who contains many algorithms about mathematics, physics, electricity, et
 
 - An simple converter to convert distance, liter or weight unit to another one.
 - Implementations of Ohm's law to compute voltage, intensity, power and/or resitance of a electric circuit.
+- Add method to convert degree unit into another one.
 
 ### In Literature
 
