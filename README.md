@@ -50,6 +50,8 @@ You can consult the API of the library to following this link : [https://kero76.
   `$ npm run test`
 - Command use to generate the documentation :  
 `$ npx typedoc --out docs src --mode file --module commonjs`
+- Command use to execute the code coverage :  
+`$ npm run coverage`
 
 ## Changelog 
 
