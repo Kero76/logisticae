@@ -1,7 +1,7 @@
-import Physics from '../src/Physics';
-import { DistanceUnit, LiterUnit, WeightUnit, DegreeUnit } from '../src/ConverterUnits';
-import { assert, expect, should } from 'chai';
+import { assert } from 'chai';
 import 'mocha';
+import { DegreeUnit, DistanceUnit, LiterUnit, WeightUnit } from '../src/ConverterUnits';
+import Physics from '../src/Physics';
 
 const physics = new Physics();
 
@@ -31,6 +31,13 @@ describe('Physics', () => {
         it('Should thrown an Error because we will try to convert gram into meter', () => {
             try {
                 physics.convert(1, WeightUnit.GRAM, DistanceUnit.METER);
+            } catch(err) {
+                assert.strictEqual(true, err instanceof Error);
+            }
+        });
+        it('Should thrown an Error because we will try to convert meter into gram', () => {
+            try {
+                physics.convert(1, DistanceUnit.METER, WeightUnit.GRAM);
             } catch(err) {
                 assert.strictEqual(true, err instanceof Error);
             }
@@ -95,6 +102,14 @@ describe('Physics', () => {
             const result = physics.convertDegree(100, DegreeUnit.KELVIN, DegreeUnit.FAHRENHEIT);
 
             assert.strictEqual(result, -279.67);
+        });
+
+        it('Should thrown an Error because we will try to convert kelvin into meter', () => {
+            try {
+                physics.convertDegree(1, DegreeUnit.KELVIN, DistanceUnit.METER);
+            } catch(err) {
+                assert.strictEqual(true, err instanceof Error);
+            }
         });
     });
 

@@ -1,4 +1,4 @@
-import { EnumUnit, DistanceUnit, LiterUnit, WeightUnit, DegreeUnit } from "./ConverterUnits";
+import { DegreeUnit, DistanceUnit, EnumUnit, LiterUnit, WeightUnit } from "./ConverterUnits";
 import MathHelper from './helpers/MathHelper';
 
 /**
@@ -80,7 +80,7 @@ export default class Physics {
             }
 
             // Celsius to another unit.
-            else if (initialUnit.symbol == DegreeUnit.CELSIUS.symbol) {
+            if (initialUnit.symbol == DegreeUnit.CELSIUS.symbol) {
                 if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
                     return value - Physics.ABSOLUTE_ZERO; 
                 } else {
@@ -89,7 +89,7 @@ export default class Physics {
             }
 
             // Fahrenheit to another unit.
-            else if (initialUnit.symbol == DegreeUnit.FAHRENHEIT.symbol) {
+            if (initialUnit.symbol == DegreeUnit.FAHRENHEIT.symbol) {
                 if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
                     return MathHelper.floor((value + 459.15) / 1.8); 
                 } else {
