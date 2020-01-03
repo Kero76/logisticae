@@ -1,6 +1,6 @@
-import Mathematics from '../src/Mathematics';
-import { assert, expect, should } from 'chai';
+import { assert } from 'chai';
 import 'mocha';
+import Mathematics from '../src/Mathematics';
 
 const maths = new Mathematics();
 
@@ -29,6 +29,11 @@ describe('Mathematics', () => {
             const result = maths.pythagoreanTheoremConverse(5, 4, NaN);
 
             assert.strictEqual(result, 3);
+        });
+        it('(5, NaN, 3) should return 4', () => {
+            const result = maths.pythagoreanTheoremConverse(5, NaN, 3);
+
+            assert.strictEqual(result, 4);
         });
         it('(NaN, 4, NaN) should throw an exception', () => {
             try {
@@ -213,5 +218,5 @@ describe('Mathematics', () => {
             assert.strictEqual(result, 30);
         });
     });
-        
+
 });

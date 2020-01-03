@@ -137,26 +137,18 @@ export default class Mathematics {
         // We search segment AE.
         if (_ae === 0 && _ad !== 0 && _ab !== 0 && _ac !== 0)
             _ae = this._crossMultiplication(_ac, _ad, _ab);
-         else if (_ae === 0 && _de !== 0 && _bc !== 0 && _ac !== 0) 
-            _ae = this._crossMultiplication(_ac, _de, _bc);
         
         // We search segment AD.
         if (_ac === 0 && _ad !== 0 && _ab !== 0 && _ae !== 0) 
             _ac = this._crossMultiplication(_ae, _ab, _ad);
-        else if (_ac === 0 && _de !== 0 && _bc !== 0 && _ae !== 0) 
-            _ac = this._crossMultiplication(_ae, _bc, _de);
 
         // We search segment DE.
         if (_de === 0 && _ad !== 0 && _ab !== 0 && _bc !== 0) 
             _de = this._crossMultiplication(_bc, _ad, _ab);
-        else if (_de === 0 && _ae !== 0 && _ac !== 0 && _bc !== 0) 
-            _de = this._crossMultiplication(_bc, _ae, _ac);
 
         // We search segment BC.
         if (_bc === 0 && _ad !== 0 && _ab !== 0 && _de !== 0)
             _bc = this._crossMultiplication(_de, _ab, _ad);
-        else if (_bc === 0 && _ae !== 0 && _ac !== 0 && _de !== 0)
-            _bc = this._crossMultiplication(_de, ac, _ae);
 
         return {
             "ad": _ad,

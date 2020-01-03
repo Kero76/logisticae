@@ -1,6 +1,6 @@
-import { DistanceUnit, LiterUnit, WeightUnit } from '../src/ConverterUnits';
-import { assert, expect, should } from 'chai';
+import { assert } from 'chai';
 import 'mocha';
+import { DegreeUnit, DistanceUnit, LiterUnit, WeightUnit } from '../src/ConverterUnits';
 
 describe('ConvertersUnits', () => {
     
@@ -34,7 +34,7 @@ describe('ConvertersUnits', () => {
     
     describe('WeightUnit', () => {
         it('Should return a strict WeightUnit.MILLIGRAM', () => {
-            const symbol = WeightUnit.MILLIGRAM.symbol
+            const symbol = WeightUnit.MILLIGRAM.symbol;
 
             assert.strictEqual(WeightUnit.value(symbol), WeightUnit.MILLIGRAM);
         });
@@ -43,6 +43,14 @@ describe('ConvertersUnits', () => {
             const symbol = WeightUnit.GRAM.symbol;
 
             assert.strictEqual(WeightUnit.value(symbol).value, 1000);
+        });
+    });
+    
+    describe('DegreeUnit', () => {
+        it('Should return a strict DegreeUnit.KELVIN symbol "K"', () => {
+            const symbol = DegreeUnit.KELVIN.symbol;
+
+            assert.strictEqual(symbol, DegreeUnit.KELVIN.symbol);
         });
     });
 
