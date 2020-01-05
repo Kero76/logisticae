@@ -1,3 +1,4 @@
+import MathHelper from "./helpers/MathHelper";
 
 /**
  * Class who contains all elements relatives to the Mathematics sciences.
@@ -8,13 +9,6 @@
  * @license MIT
  */
 export default class Mathematics {
-
-    /**
-     * Square value.
-     * 
-     * @static
-     */ 
-    static readonly SQUARE: number = 2;
 
     /**
      * Default constructor of the class.
@@ -39,12 +33,11 @@ export default class Mathematics {
      *  A boolean to indicate if the triangle is right or not.
      * 
      * @since 0.1.0
-     * @version 1.0
+     * @version 1.1
      */
     pythagoreanTheorem(hypothenuse: number, cathetus1: number, cathetus2: number): boolean {
-        const squareHypothenuse = Math.pow(hypothenuse, Mathematics.SQUARE);
-        const squareCathetuses = Math.pow(cathetus1, Mathematics.SQUARE) + 
-                                 Math.pow(cathetus2, Mathematics.SQUARE);
+        const squareHypothenuse = MathHelper.square(hypothenuse);
+        const squareCathetuses = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
 
         return (squareHypothenuse === squareCathetuses);
     }
@@ -65,7 +58,7 @@ export default class Mathematics {
      *  Will throw if 2 of the 3 values expected are NaN.
      * 
      * @since 0.1.0
-     * @version 1.0
+     * @version 1.1
      */
     pythagoreanTheoremConverse(hypothenuse: number, cathetus1: number, cathetus2: number): number {
         if ((isNaN(hypothenuse) && isNaN(cathetus1)) ||
@@ -79,14 +72,14 @@ export default class Mathematics {
         if (!isNaN(hypothenuse)) {
             // First size is empty, so compute it then compute the second size.
             if (!isNaN(cathetus1)) {
-                const _cathete = Math.pow(hypothenuse, Mathematics.SQUARE) - Math.pow(cathetus1, Mathematics.SQUARE);
+                const _cathete = MathHelper.square(hypothenuse) - MathHelper.square(cathetus1);
                 res = Math.sqrt(_cathete);
             } else {
-                const _cathete = Math.pow(hypothenuse, Mathematics.SQUARE) - Math.pow(cathetus2, Mathematics.SQUARE);
+                const _cathete = MathHelper.square(hypothenuse) - MathHelper.square(cathetus2);
                 res = Math.sqrt(_cathete);
             }
         } else {
-            const _hypothenuse = Math.pow(cathetus1, Mathematics.SQUARE) + Math.pow(cathetus2, Mathematics.SQUARE);
+            const _hypothenuse = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
             res = Math.sqrt(_hypothenuse);
         }
 
