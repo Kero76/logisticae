@@ -1,4 +1,3 @@
-import MathHelper from "./helpers/MathHelper";
 
 /**
  * Class who contains all elements relatives to the Mathematics sciences.
@@ -292,7 +291,7 @@ export default class Mathematics {
      */
     private _lucasLehmerAlgorithm(x: number): boolean {
         let s = 4;
-        let m = MathHelper.square(s) - 2;
+        let m = Math.pow(2, x) - 1;
 
         for (let i = x - 2; i > 0; --i) {
             s = (s * s - 2) % m;
