@@ -3,7 +3,6 @@ import 'mocha';
 import { DegreeUnit, DistanceUnit, LiterUnit, WeightUnit } from '../src/ConverterUnits';
 
 describe('ConvertersUnits', () => {
-    
     describe('DistanceUnit', () => {
         it('Should return a strict DistanceUnit.MILLIMETER', () => {
             const symbol = DistanceUnit.MILLIMETER.symbol;
@@ -17,7 +16,7 @@ describe('ConvertersUnits', () => {
             assert.strictEqual(DistanceUnit.value(symbol).value, 1000);
         });
     });
-    
+
     describe('LiterUnit', () => {
         it('Should return a strict LiterUnit.MILLILITER', () => {
             const symbol = LiterUnit.MILLILITER.symbol;
@@ -31,7 +30,7 @@ describe('ConvertersUnits', () => {
             assert.strictEqual(LiterUnit.value(symbol).value, 1000);
         });
     });
-    
+
     describe('WeightUnit', () => {
         it('Should return a strict WeightUnit.MILLIGRAM', () => {
             const symbol = WeightUnit.MILLIGRAM.symbol;
@@ -45,7 +44,7 @@ describe('ConvertersUnits', () => {
             assert.strictEqual(WeightUnit.value(symbol).value, 1000);
         });
     });
-    
+
     describe('DegreeUnit', () => {
         it('Should return a strict DegreeUnit.KELVIN symbol "K"', () => {
             const symbol = DegreeUnit.KELVIN.symbol;
@@ -53,5 +52,4 @@ describe('ConvertersUnits', () => {
             assert.strictEqual(symbol, DegreeUnit.KELVIN.symbol);
         });
     });
-
-})
+});
