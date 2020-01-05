@@ -243,6 +243,33 @@ export default class Mathematics {
         return this._lucasLehmerAlgorithm(x);
     }
 
+    /**
+     * Check if a number is a prime number or not.
+     * 
+     * @param x {number}
+     *  Number to check is a prime number.
+     * @returns {boolean}
+     *  True if x is a prime number.
+     * 
+     * @since 0.4.0
+     * @version 1.0
+     */
+    isPrimeNumber(x: number): boolean {
+        if (x % 2 === 0) 
+            return (x === 2);
+
+        if (x === 1)
+            return false;
+
+        for (let i = 3; i * i <= x; i += 2) {
+            if (x % i === 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     // Private functions //
     /**
      * Compute a cross multiplication.
