@@ -166,15 +166,15 @@ export default class Mathematics {
      * @param {number} ac 
      *  Length of segment AC.
      * @param {number} precision 
-     *  Precision of the result excepted.
+     *  Precision of the result excepted. By default, the number of digit expected is equal at 2 digits.
      * @returns {boolean}
      *  A boolean to indicate if the segment [DE] and [BC] are parallel or not.
      * 
      * @since 0.1.0
-     * @version 1.0
+     * @version 1.1
      */
-    interceptTheoremConverse(ad: number, ab: number, ae: number, ac: number, precision: number = 100): boolean {
-        return (Math.round((ad / ab) * precision) / precision) === (Math.round((ae / ac) * precision) / precision);
+    interceptTheoremConverse(ad: number, ab: number, ae: number, ac: number, precision: number = 2): boolean {
+        return MathHelper.floor(ad / ab, precision) === MathHelper.floor(ae / ac, precision);
     }
 
     /**
