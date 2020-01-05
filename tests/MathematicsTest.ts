@@ -242,4 +242,37 @@ describe('Mathematics', () => {
         });
     });
 
+    describe('isPrimeNumber', () => {
+        it('isPrimeNumber(2) should return true', () => {
+            const result = maths.isPrimeNumber(2);
+
+            assert.isTrue(result);
+        });
+        it('isPrimeNumber(13) should return true', () => {
+            const result = maths.isPrimeNumber(13);
+
+            assert.isTrue(result);
+        });
+        it('isPrimeNumber(9) should return false', () => {
+            const result = maths.isPrimeNumber(9);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(1) should return false', () => {
+            const result = maths.isPrimeNumber(1);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(-2) should return false', () => {
+            const result = maths.isPrimeNumber(-2);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(0) should return false', () => {
+            const result = maths.isPrimeNumber(0);
+
+            assert.isFalse(result);
+        });
+    });
+
 });

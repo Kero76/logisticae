@@ -13,6 +13,7 @@ Library who contains many algorithms about mathematics, physics, electricity, et
 - Intercept Theorem  also known as Thales's Theorem and his converse.
 - Euclidean algorithm to compute the Greatest Common Divisor between 2 numbers.
 - LCM algorithm to compute the Least Common Multiple between 2 numbers.
+- Implementation of an algorithm to check if a number is a prime number or not.
 - Implementation of Lucas-Lehmer algorithms to check if a number is a Mersenner number.
 
 ### In Physics

@@ -6,6 +6,7 @@
 
 - [Physics] - Add degree converter to convert Celsius, Fahrenheint or Kelvin into another one.
 - [Mathematics] - Implementation of Lucas-Lehmer algorithm.
+- [Mathematics] - Implementaion of isPrimeNumber method.
 
 ## V0.3.0 - Stringae update
 
@@ -13,7 +14,7 @@
 
 - Implementation of an algorithm to reverse a text.
 - Implementation of an algorithm to check if a text is a palindrome.
- 
+
 ## V0.2.0 - Physicae update
 
 ### Features 
