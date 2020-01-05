@@ -1,20 +1,19 @@
-import MathHelper from "./helpers/MathHelper";
+import MathHelper from './helpers/MathHelper';
 
 /**
  * Class who contains all elements relatives to the Mathematics sciences.
- * 
+ *
  * @author Nicolas GILLE <nic.gille@gmail.com>
  * @since 0.1.0
  * @version 1.0
  * @license MIT
  */
 export default class Mathematics {
-
     /**
      * Default constructor of the class.
-     * 
+     *
      * @constructor
-     * 
+     *
      * @since 0.1.0
      * @version 1.0
      */
@@ -22,16 +21,16 @@ export default class Mathematics {
 
     /**
      * Pythagorean theorem used to check if a triangle is right or not.
-     * 
-     * @param {number} hypothenuse 
+     *
+     * @param {number} hypothenuse
      *  Hypothenuse of the potential right triangle
-     * @param {number} cathetus1 
+     * @param {number} cathetus1
      *  First cathetus of the potential right triangle.
-     * @param {number} cathetus2 
+     * @param {number} cathetus2
      *  Seconde cathetus of the potential right triangle.
      * @returns {boolean}
      *  A boolean to indicate if the triangle is right or not.
-     * 
+     *
      * @since 0.1.0
      * @version 1.1
      */
@@ -39,31 +38,33 @@ export default class Mathematics {
         const squareHypothenuse = MathHelper.square(hypothenuse);
         const squareCathetuses = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
 
-        return (squareHypothenuse === squareCathetuses);
+        return squareHypothenuse === squareCathetuses;
     }
 
     /**
      * Compute the thirds side of a right triangle.
      * To this, get two sizes to compute the last size.
-     * 
-     * @param {number} hypothenuse 
+     *
+     * @param {number} hypothenuse
      *  Hypothenuse of the triangle.
-     * @param {number} cathetus1 
+     * @param {number} cathetus1
      *  First side of the triangle.
-     * @param {number} cathetus2 
+     * @param {number} cathetus2
      *  Second side of the triangle.
      * @returns {number}
      *  The size of the third value of the right triangle.
-     * @throws {Error} 
+     * @throws {Error}
      *  Will throw if 2 of the 3 values expected are NaN.
-     * 
+     *
      * @since 0.1.0
      * @version 1.1
      */
     pythagoreanTheoremConverse(hypothenuse: number, cathetus1: number, cathetus2: number): number {
-        if ((isNaN(hypothenuse) && isNaN(cathetus1)) ||
+        if (
+            (isNaN(hypothenuse) && isNaN(cathetus1)) ||
             (isNaN(hypothenuse) && isNaN(cathetus2)) ||
-            (isNaN(cathetus1) && isNaN(cathetus2))) {
+            (isNaN(cathetus1) && isNaN(cathetus2))
+        ) {
             throw new Error('2 of the 3 values are expected to compute the last value.');
         }
 
@@ -88,23 +89,23 @@ export default class Mathematics {
 
     /**
      * Application of the Thales Theorem used to compute 2 of the 6 side's size missings.
-     * 
-     * @param {number} ad 
+     *
+     * @param {number} ad
      *  Length of the segment AD.
-     * @param {number} ab 
+     * @param {number} ab
      *  Length of the segment AB.
      * @param {number} ae
      *  Length of the segment AE.
-     * @param {number} ac 
+     * @param {number} ac
      *  Length of the segment AC.
-     * @param {number} de 
+     * @param {number} de
      *  Length of the segment DE.
-     * @param {number} bc 
+     * @param {number} bc
      *  Length of the segment BC.
      * @returns {object}
-     *  An object with the length of each segments expected as an associative array with 
+     *  An object with the length of each segments expected as an associative array with
      * the name of the segment as *key* and the size of the segment as *value*.
-     * 
+     *
      * @since 0.1.0
      * @version 1.0
      */
@@ -117,59 +118,51 @@ export default class Mathematics {
         let _bc = isNaN(bc) ? 0 : bc;
 
         // We search segment AD.
-        if (_ad === 0 && _ae !== 0 && _ac !== 0 && _ab !== 0) 
-            _ad = this._crossMultiplication(_ab, _ae, _ac);
-        else if (_ad === 0 && _de !== 0 && _bc !== 0 && _ab !== 0) 
-            _ad = this._crossMultiplication(_ab, _de, _bc);
-         
+        if (_ad === 0 && _ae !== 0 && _ac !== 0 && _ab !== 0) _ad = this._crossMultiplication(_ab, _ae, _ac);
+        else if (_ad === 0 && _de !== 0 && _bc !== 0 && _ab !== 0) _ad = this._crossMultiplication(_ab, _de, _bc);
+
         // We search segment AB.
-        if (_ab === 0 && _ae !== 0 && _ac !== 0 && _ad !== 0) 
-            _ab = this._crossMultiplication(_ad, _ac, _ae);
-        else if (_ab === 0 && _de !== 0 && _bc !== 0 && _ad !== 0) 
-            _ab = this._crossMultiplication(_ad, _bc, _de);
-         
+        if (_ab === 0 && _ae !== 0 && _ac !== 0 && _ad !== 0) _ab = this._crossMultiplication(_ad, _ac, _ae);
+        else if (_ab === 0 && _de !== 0 && _bc !== 0 && _ad !== 0) _ab = this._crossMultiplication(_ad, _bc, _de);
+
         // We search segment AE.
-        if (_ae === 0 && _ad !== 0 && _ab !== 0 && _ac !== 0)
-            _ae = this._crossMultiplication(_ac, _ad, _ab);
-        
+        if (_ae === 0 && _ad !== 0 && _ab !== 0 && _ac !== 0) _ae = this._crossMultiplication(_ac, _ad, _ab);
+
         // We search segment AD.
-        if (_ac === 0 && _ad !== 0 && _ab !== 0 && _ae !== 0) 
-            _ac = this._crossMultiplication(_ae, _ab, _ad);
+        if (_ac === 0 && _ad !== 0 && _ab !== 0 && _ae !== 0) _ac = this._crossMultiplication(_ae, _ab, _ad);
 
         // We search segment DE.
-        if (_de === 0 && _ad !== 0 && _ab !== 0 && _bc !== 0) 
-            _de = this._crossMultiplication(_bc, _ad, _ab);
+        if (_de === 0 && _ad !== 0 && _ab !== 0 && _bc !== 0) _de = this._crossMultiplication(_bc, _ad, _ab);
 
         // We search segment BC.
-        if (_bc === 0 && _ad !== 0 && _ab !== 0 && _de !== 0)
-            _bc = this._crossMultiplication(_de, _ab, _ad);
+        if (_bc === 0 && _ad !== 0 && _ab !== 0 && _de !== 0) _bc = this._crossMultiplication(_de, _ab, _ad);
 
         return {
-            "ad": _ad,
-            "ab": _ab,
-            "ae": _ae,
-            "ac": _ac,
-            "de": _de,
-            "bc": _bc,
+            ad: _ad,
+            ab: _ab,
+            ae: _ae,
+            ac: _ac,
+            de: _de,
+            bc: _bc,
         };
     }
 
     /**
      * Indicate if the segment [DE] and [BC] are parallel or not.
-     * 
-     * @param {number} ad 
+     *
+     * @param {number} ad
      *  Length of segment AD.
-     * @param {number} ab 
+     * @param {number} ab
      *  Length of segment AB.
-     * @param {number} ae 
+     * @param {number} ae
      *  Length of segment AE.
-     * @param {number} ac 
+     * @param {number} ac
      *  Length of segment AC.
-     * @param {number} precision 
+     * @param {number} precision
      *  Precision of the result excepted. By default, the number of digit expected is equal at 2 digits.
      * @returns {boolean}
      *  A boolean to indicate if the segment [DE] and [BC] are parallel or not.
-     * 
+     *
      * @since 0.1.0
      * @version 1.1
      */
@@ -179,14 +172,14 @@ export default class Mathematics {
 
     /**
      * Euclidean algorithm to compute the Greatest Common Divisor or GCD.
-     * 
-     * @param {number} opA 
+     *
+     * @param {number} opA
      *  First operand of the operation.
-     * @param {number} opB 
+     * @param {number} opB
      *  Second operand of the operation.
-     * @returns {number} 
+     * @returns {number}
      *  The greatest common divisor between the operand A et operand B.
-     * 
+     *
      * @since 0.1.0
      * @version 1.0
      */
@@ -195,7 +188,7 @@ export default class Mathematics {
         var opB = b;
         var tmp = opA;
 
-        while (opB > 0){
+        while (opB > 0) {
             tmp = opA % opB;
             opA = opB;
             opB = tmp;
@@ -206,38 +199,37 @@ export default class Mathematics {
 
     /**
      * Get the Least Common Multiple (LCM) of two numbers.
-     * 
-     * @param {number} a 
+     *
+     * @param {number} a
      *  A number.
-     * @param {number} b 
+     * @param {number} b
      *  Another number.
      * @returns {number}
      *  The least common multiple between a and b.
-     * 
+     *
      * @since 0.1.0
      * @version 1.0
      */
     lcmAlgorithm(a: number, b: number): number {
-        if (a === 0 || b === 0) 
-            return 0;
-        
+        if (a === 0 || b === 0) return 0;
+
         return Math.abs((a * b) / this.euclideanAlgorithm(a, b));
     }
 
     /**
      * Check if a number is a Mersenne Number or not.
-     * 
-     * This method implement the Lucas-Lehmer algoritmh. 
-     * You can get more information about this algorithm here : 
+     *
+     * This method implement the Lucas-Lehmer algoritmh.
+     * You can get more information about this algorithm here :
      * https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test
-     * 
+     *
      * @param x {number}
      *  The number to test.
      * @returns {boolean}
      *  True if x is a Mersenne Number.
-     * 
+     *
      * @since 0.4.0
-     * @version 1.0 
+     * @version 1.0
      */
     isMersenneNumber(x: number): boolean {
         return this._lucasLehmerAlgorithm(x);
@@ -245,21 +237,19 @@ export default class Mathematics {
 
     /**
      * Check if a number is a prime number or not.
-     * 
+     *
      * @param x {number}
      *  Number to check is a prime number.
      * @returns {boolean}
      *  True if x is a prime number.
-     * 
+     *
      * @since 0.4.0
      * @version 1.0
      */
     isPrimeNumber(x: number): boolean {
-        if (x % 2 === 0) 
-            return (x === 2);
+        if (x % 2 === 0) return x === 2;
 
-        if (x === 1)
-            return false;
+        if (x === 1) return false;
 
         for (let i = 3; i * i <= x; i += 2) {
             if (x % i === 0) {
@@ -273,38 +263,39 @@ export default class Mathematics {
     // Private functions //
     /**
      * Compute a cross multiplication.
-     * 
-     * @param {number} a 
+     *
+     * @param {number} a
      *  First operand to multiply with b.
-     * @param {number} b 
+     * @param {number} b
      *  Second operand to multiply with a.
-     * @param {number} c 
+     * @param {number} c
      *  Third operand to divide result of a * b.
      * @returns {number}
      *  The fourth operand of the cross multiplication.
-     * 
+     *
      * @ignore
-     * @private 
-     * 
+     * @private
+     *
      * @see interceptTheorem
      * @since 0.1.0
      * @version 1.0
-     */ 
+     */
+
     private _crossMultiplication(a: number, b: number, c: number): number {
         return (a * b) / c;
     }
 
     /**
      * Check if the number x is a Mersenne Prime or not.
-     * 
+     *
      * @param x {number}
      *  The number to check.
      * @returns {boolean}
-     *  Return true if the number x is a Mersenne Prime or false in other case. 
-     * 
+     *  Return true if the number x is a Mersenne Prime or false in other case.
+     *
      * @ignore
      * @private
-     * 
+     *
      * @see MathHelper.square
      * @since 0.4.0
      * @version 1.0
@@ -315,9 +306,8 @@ export default class Mathematics {
 
         for (let i = x - 2; i > 0; --i) {
             s = (s * s - 2) % m;
-            
-            if (s === 0)
-                return true;
+
+            if (s === 0) return true;
         }
 
         return false;

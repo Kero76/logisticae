@@ -5,7 +5,6 @@ import Mathematics from '../src/Mathematics';
 const maths = new Mathematics();
 
 describe('Mathematics', () => {
-
     describe('pythagoreanTheorem', () => {
         it('(5, 4, 3) should return true', () => {
             const result = maths.pythagoreanTheorem(5, 4, 3);
@@ -37,8 +36,8 @@ describe('Mathematics', () => {
         });
         it('(NaN, 4, NaN) should throw an exception', () => {
             try {
-                maths.pythagoreanTheoremConverse(NaN, 4, NaN)
-            } catch(err) {
+                maths.pythagoreanTheoremConverse(NaN, 4, NaN);
+            } catch (err) {
                 assert.strictEqual(true, err instanceof Error);
             }
         });
@@ -47,7 +46,7 @@ describe('Mathematics', () => {
     describe('interceptTheorem', () => {
         it('(NaN, 5, NaN, 10, 6, 15) should return AD = 2 & AE = 4', () => {
             const result = maths.interceptTheorem(NaN, 5, NaN, 10, 6, 15);
-            
+
             assert.strictEqual(result['ad'], 2);
             assert.strictEqual(result['ab'], 5);
             assert.strictEqual(result['ae'], 4);
@@ -173,7 +172,7 @@ describe('Mathematics', () => {
     describe('interceptTheoremConverse', () => {
         it('(2, 4, 4, 8) should return true', () => {
             const result = maths.interceptTheoremConverse(2, 4, 4, 8);
-            
+
             assert.isTrue(result);
         });
         it('(2, 4, 5, 17) should return false', () => {
@@ -274,5 +273,4 @@ describe('Mathematics', () => {
             assert.isFalse(result);
         });
     });
-
 });
