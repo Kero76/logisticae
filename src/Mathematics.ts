@@ -1,3 +1,5 @@
+import MathHelper from "./helpers/MathHelper";
+
 /**
  * Class who contains all elements relatives to the Mathematics sciences.
  * 
@@ -230,12 +232,28 @@ export default class Mathematics {
         return Math.abs((a * b) / this.euclideanAlgorithm(a, b));
     }
 
+    /**
+     * Check if a number is a Mersenne Number or not.
+     * 
+     * This method implement the Lucas-Lehmer algoritmh. 
+     * You can get more information about this algorithm here : 
+     * https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test
+     * 
+     * @param x {number}
+     *  The number to test.
+     * @returns {boolean}
+     *  True if x is a Mersenne Number.
+     * 
+     * @since 0.4.0
+     * @version 1.0 
+     */
+    isMersenneNumber(x: number): boolean {
+        return this._lucasLehmerAlgorithm(x);
+    }
+
     // Private functions //
     /**
      * Compute a cross multiplication.
-     * 
-     * @ignore
-     * @private 
      * 
      * @param {number} a 
      *  First operand to multiply with b.
@@ -246,11 +264,43 @@ export default class Mathematics {
      * @returns {number}
      *  The fourth operand of the cross multiplication.
      * 
+     * @ignore
+     * @private 
+     * 
      * @see interceptTheorem
      * @since 0.1.0
      * @version 1.0
      */ 
     private _crossMultiplication(a: number, b: number, c: number): number {
         return (a * b) / c;
+    }
+
+    /**
+     * Check if the number x is a Mersenne Prime or not.
+     * 
+     * @param x {number}
+     *  The number to check.
+     * @returns {boolean}
+     *  Return true if the number x is a Mersenne Prime or false in other case. 
+     * 
+     * @ignore
+     * @private
+     * 
+     * @see MathHelper.square
+     * @since 0.4.0
+     * @version 1.0
+     */
+    private _lucasLehmerAlgorithm(x: number): boolean {
+        let s = 4;
+        let m = MathHelper.square(s) - 2;
+
+        for (let i = x - 2; i > 0; --i) {
+            s = (s * s - 2) % m;
+            
+            if (s === 0)
+                return true;
+        }
+
+        return false;
     }
 }

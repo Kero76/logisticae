@@ -27,4 +27,19 @@ export default class MathHelper {
         
         return Math.floor(x * tmp) / tmp;
     }
+
+    /**
+     * Return the squared value of x.
+     * 
+     * @param x {number}
+     *  Number to get the squared value.
+     * @returns {number}
+     *  The number upped to the square value.
+     * 
+     * @since 0.4.0
+     * @version 1.0
+     */
+    static square(x: number): number {
+        return Math.pow(x, 2);
+    }
 }
