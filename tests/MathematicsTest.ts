@@ -219,4 +219,27 @@ describe('Mathematics', () => {
         });
     });
 
+    describe('isMersenneNumber', () => {
+        it('isMersenneNumber(3) should return true', () => {
+            const result = maths.isMersenneNumber(3);
+
+            assert.isTrue(result);
+        });
+        it('isMersenneNumber(4) should return true', () => {
+            const result = maths.isMersenneNumber(4);
+
+            assert.isFalse(result);
+        });
+        it('isMersenneNumber(127) should retun true', () => {
+            const result = maths.isMersenneNumber(127);
+
+            assert.isTrue(result);
+        });
+        it('isMersenneNumber(11) should return false', () => {
+            const result = maths.isMersenneNumber(11);
+
+            assert.isFalse(result);
+        });
+    });
+
 });

@@ -1,10 +1,11 @@
-# Changelog 
+# Changelog
 
 ## V0.4.0 - Unnamed update
 
 ### Features
 
-- Add degree converter to convert Celsius, Fahrenheint or Kelvin.
+- [Physics] - Add degree converter to convert Celsius, Fahrenheint or Kelvin into another one.
+- [Mathematics] - Implementation of Lucas-Lehmer algorithm.
 
 ## V0.3.0 - Stringae update
 
@@ -13,7 +14,7 @@
 - Implementation of an algorithm to reverse a text.
 - Implementation of an algorithm to check if a text is a palindrome.
  
-## V0.2.0 - Physicae update 
+## V0.2.0 - Physicae update
 
 ### Features 
 
