@@ -1,3 +1,4 @@
+import Point from './geometry/Point';
 import MathHelper from './helpers/MathHelper';
 
 /**
@@ -212,7 +213,6 @@ export default class Mathematics {
      */
     lcmAlgorithm(a: number, b: number): number {
         if (a === 0 || b === 0) return 0;
-
         return Math.abs((a * b) / this.euclideanAlgorithm(a, b));
     }
 
@@ -258,6 +258,28 @@ export default class Mathematics {
         }
 
         return true;
+    }
+
+    /**
+     * Compute the slope of a line.
+     *
+     * @param a {Point}
+     *  The point A.
+     * @param b {Point}
+     *  The point b.
+     * @returns {number}
+     *  The slope of the line.
+     * @throws {Error}
+     *  Thrown an Error when the denominator is equal to 0.
+     *
+     * @see Point
+     * @since 0.4.0
+     * @version 1.0
+     */
+    lineSlope(a: Point, b: Point): number {
+        if (b.x - a.x === 0) throw new Error('Cannot divide by 0.');
+
+        return (b.y - a.y) / (b.x - a.x);
     }
 
     // Private functions //
