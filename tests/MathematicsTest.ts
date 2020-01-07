@@ -1,5 +1,6 @@
 import { assert } from 'chai';
 import 'mocha';
+import Point from '../src/geometry/Point';
 import Mathematics from '../src/Mathematics';
 
 const maths = new Mathematics();
@@ -271,6 +272,43 @@ describe('Mathematics', () => {
             const result = maths.isPrimeNumber(0);
 
             assert.isFalse(result);
+        });
+    });
+
+    describe('lineSlope', () => {
+        it('Slope returns should be equal to 1', () => {
+            const a = new Point(1, 1);
+            const b = new Point(2, 2);
+
+            const result = maths.lineSlope(a, b);
+
+            assert.strictEqual(result, 1);
+        });
+        it('Slope returns should be equal to -1', () => {
+            const a = new Point(3, 1);
+            const b = new Point(2, 2);
+
+            const result = maths.lineSlope(b, a);
+
+            assert.strictEqual(result, -1);
+        });
+        it("Thrown an Error because it's impossible to divide by 0", () => {
+            const a = new Point(1, 1);
+            const b = new Point(1, 1);
+
+            try {
+                maths.lineSlope(a, b);
+            } catch (err) {
+                assert.strictEqual(true, err instanceof Error);
+            }
+        });
+        it('Slope returns should be equal to 0.4', () => {
+            const a = new Point(-4, 2);
+            const b = new Point(1, 4);
+
+            const result = maths.lineSlope(a, b);
+
+            assert.strictEqual(result, 0.4);
         });
     });
 });

@@ -269,12 +269,16 @@ export default class Mathematics {
      *  The point b.
      * @returns {number}
      *  The slope of the line.
+     * @throws {Error}
+     *  Thrown an Error when the denominator is equal to 0.
      *
      * @see Point
      * @since 0.4.0
      * @version 1.0
      */
     lineSlope(a: Point, b: Point): number {
+        if (b.x - a.x === 0) throw new Error('Cannot divide by 0.');
+
         return (b.y - a.y) / (b.x - a.x);
     }
 
