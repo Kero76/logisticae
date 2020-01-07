@@ -21,7 +21,8 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register ./tests/**/*.ts",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "lint": "eslint src/**/*.ts tests/**/*.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.2.7",
