@@ -4,9 +4,16 @@
 
 ### Features
 
-- [Physics] - Add degree converter to convert Celsius, Fahrenheint or Kelvin into another one.
+- [Physics] - Add degree converter to convert Celsius, Fahrenheit or Kelvin into another one.
 - [Mathematics] - Implementation of Lucas-Lehmer algorithm.
-- [Mathematics] - Implementaion of isPrimeNumber method.
+- [Mathematics] - Implementation of isPrimeNumber method.
+- [Mathematics] - Implementation of the line slope computation.
+
+### Developer's features
+
+- [Refactor] - Add [ESLint](https://eslint.org/) to check code formatting.
+- [Refactor] - Add [Prettier](https://prettier.io/) to format source code.
+- [Test] - Add code coverage for unit tests.
 
 ## V0.3.0 - Stringae update
 
@@ -17,7 +24,7 @@
 
 ## V0.2.0 - Physicae update
 
-### Features 
+### Features
 
 - Implementation of a simple converter to convert distance, liter or weight unit into another one.
 - Implementation of the Ohm's law.
@@ -27,7 +34,7 @@
 ### Features
 
 - Initial configuration project.
-- Add the following *mathematica* algorithms :
+- Add the following *mathematics* algorithms :
   - Pythagorean Theorem and his converse.
   - Intercept Theorem  also known as Thales's Theorem and his converse.
   - Euclidean algorithm to compute the Greatest Common Divisor between 2 numbers.
