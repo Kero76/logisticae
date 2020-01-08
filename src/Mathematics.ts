@@ -23,8 +23,8 @@ export default class Mathematics {
     /**
      * Pythagorean theorem used to check if a triangle is right or not.
      *
-     * @param {number} hypothenuse
-     *  Hypothenuse of the potential right triangle
+     * @param {number} hypotenuse
+     *  Hypotenuse of the potential right triangle
      * @param {number} cathetus1
      *  First cathetus of the potential right triangle.
      * @param {number} cathetus2
@@ -35,19 +35,19 @@ export default class Mathematics {
      * @since 0.1.0
      * @version 1.1
      */
-    pythagoreanTheorem(hypothenuse: number, cathetus1: number, cathetus2: number): boolean {
-        const squareHypothenuse = MathHelper.square(hypothenuse);
+    pythagoreanTheorem(hypotenuse: number, cathetus1: number, cathetus2: number): boolean {
+        const squareHypotenuse = MathHelper.square(hypotenuse);
         const squareCathetuses = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
 
-        return squareHypothenuse === squareCathetuses;
+        return squareHypotenuse === squareCathetuses;
     }
 
     /**
      * Compute the thirds side of a right triangle.
      * To this, get two sizes to compute the last size.
      *
-     * @param {number} hypothenuse
-     *  Hypothenuse of the triangle.
+     * @param {number} hypotenuse
+     *  Hypotenuse of the triangle.
      * @param {number} cathetus1
      *  First side of the triangle.
      * @param {number} cathetus2
@@ -60,36 +60,36 @@ export default class Mathematics {
      * @since 0.1.0
      * @version 1.1
      */
-    pythagoreanTheoremConverse(hypothenuse: number, cathetus1: number, cathetus2: number): number {
+    pythagoreanTheoremConverse(hypotenuse: number, cathetus1: number, cathetus2: number): number {
         if (
-            (isNaN(hypothenuse) && isNaN(cathetus1)) ||
-            (isNaN(hypothenuse) && isNaN(cathetus2)) ||
+            (isNaN(hypotenuse) && isNaN(cathetus1)) ||
+            (isNaN(hypotenuse) && isNaN(cathetus2)) ||
             (isNaN(cathetus1) && isNaN(cathetus2))
         ) {
             throw new Error('2 of the 3 values are expected to compute the last value.');
         }
 
-        // Hypothenuse found, then compute a cathete size, so in other case compute the hypothenuse size
+        // hypotenuse found, then compute a cathete size, so in other case compute the hypotenuse size
         let res = 0;
-        if (!isNaN(hypothenuse)) {
+        if (!isNaN(hypotenuse)) {
             // First size is empty, so compute it then compute the second size.
             if (!isNaN(cathetus1)) {
-                const _cathete = MathHelper.square(hypothenuse) - MathHelper.square(cathetus1);
+                const _cathete = MathHelper.square(hypotenuse) - MathHelper.square(cathetus1);
                 res = Math.sqrt(_cathete);
             } else {
-                const _cathete = MathHelper.square(hypothenuse) - MathHelper.square(cathetus2);
+                const _cathete = MathHelper.square(hypotenuse) - MathHelper.square(cathetus2);
                 res = Math.sqrt(_cathete);
             }
         } else {
-            const _hypothenuse = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
-            res = Math.sqrt(_hypothenuse);
+            const _hypotenuse = MathHelper.square(cathetus1) + MathHelper.square(cathetus2);
+            res = Math.sqrt(_hypotenuse);
         }
 
         return res;
     }
 
     /**
-     * Application of the Thales Theorem used to compute 2 of the 6 side's size missings.
+     * Application of the Thales Theorem used to compute 2 of the 6 side's size missing.
      *
      * @param {number} ad
      *  Length of the segment AD.
@@ -219,7 +219,7 @@ export default class Mathematics {
     /**
      * Check if a number is a Mersenne Number or not.
      *
-     * This method implement the Lucas-Lehmer algoritmh.
+     * This method implement the Lucas-Lehmer algorithm.
      * You can get more information about this algorithm here :
      * https://en.wikipedia.org/wiki/Lucas%E2%80%93Lehmer_primality_test
      *
@@ -318,6 +318,7 @@ export default class Mathematics {
      * @ignore
      * @private
      *
+     * @see isMersenneNumber
      * @see MathHelper.square
      * @since 0.4.0
      * @version 1.0

@@ -1,5 +1,5 @@
 /**
- * Class who contains all algoritmhs about Text and String.
+ * Class who contains all algorithms about Text and String.
  *
  * @author Nicolas GILLE <nic.gille@gmail.com>
  * @since 0.3.0
@@ -8,14 +8,14 @@
  */
 export default class Strings {
     /**
-     * Get all ponctuations from a string.
+     * Get all punctuations from a string.
      *
      * @static
      *
      * @since 0.3.0
      * @version 1.0
      */
-    static PONCTUATION_REGEX: RegExp = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-.\/:;<=>?@\[\]^_`{|}~]/g;
+    static PUNCTUATION_REGEX: RegExp = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,\-./:;<=>?@[\]^_`{|}~]/g;
 
     /**
      * Get all spaces from a string.
@@ -43,7 +43,7 @@ export default class Strings {
      * @param {string} text
      *  The initial text to reverse order of all characters.
      * @returns {string}
-     *  The text with all characters inversed.
+     *  The text with all characters inverted.
      *
      * @since 0.3.0
      * @version 1.0
@@ -75,9 +75,9 @@ export default class Strings {
             text = text.toLocaleLowerCase();
         }
 
-        text = text.replace(Strings.PONCTUATION_REGEX, '').replace(Strings.SPACE_REGEX, '');
+        text = text.replace(Strings.PUNCTUATION_REGEX, '').replace(Strings.SPACE_REGEX, '');
         const reverseText = this.reverse(text)
-            .replace(Strings.PONCTUATION_REGEX, '')
+            .replace(Strings.PUNCTUATION_REGEX, '')
             .replace(Strings.SPACE_REGEX, '');
 
         return text === reverseText;
