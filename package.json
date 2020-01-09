@@ -22,7 +22,9 @@
   "scripts": {
     "test": "mocha -r ts-node/register ./tests/**/*.ts",
     "coverage": "nyc npm run test",
-    "lint": "eslint src/**/*.ts tests/**/*.ts"
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "build": "tsc",
+    "doc": "npx typedoc --out docs src --mode file --module commonjs"
   },
   "devDependencies": {
     "@types/chai": "^4.2.7",
