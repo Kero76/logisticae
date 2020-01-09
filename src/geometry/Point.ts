@@ -7,7 +7,20 @@
  * @license MIT
  */
 export default class Point {
+    /**
+     * Coordinate of the abscissa.
+     *
+     * @since 0.4.0
+     * @version 1.0
+     */
     x: number;
+
+    /**
+     * Coordinate of the ordinate.
+     *
+     * @since 0.4.0
+     * @version 1.0
+     */
     y: number;
 
     /**
