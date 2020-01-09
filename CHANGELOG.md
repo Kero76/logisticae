@@ -14,6 +14,8 @@
 - [Refactor] - Add [ESLint](https://eslint.org/) to check code formatting.
 - [Refactor] - Add [Prettier](https://prettier.io/) to format source code.
 - [Test] - Add code coverage for unit tests.
+- [NPM] - Add `npm run build` to build source, `npm run docs` to generate the API documentation,
+  `npm run lint` to execute the linter on source code and `npm run coverage` to execute code coverage.
 
 ## V0.3.0 - Stringae update
 

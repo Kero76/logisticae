@@ -50,15 +50,15 @@ This version is update after each release of the API.
 ## Useful commands
 
 - Command use to compile the project :  
-  `$ tsc`
+  `$ npm run build` or `$ tsc`
 - Command use to execute the unit tests :  
-  `$ npm run test`
+  `$ npm test` or  `$ npm run test`
 - Command use to execute the code coverage :  
   `$ npm run coverage`
 - Command use to execute the linter :  
   `$ npm run lint`
 - Command use to generate the documentation :  
-  `$ npx typedoc --out docs src --mode file --module commonjs`
+  `$ npm run docs` or `$ npx typedoc --out docs src --mode file --module commonjs`
 
 ## Changelog
 
