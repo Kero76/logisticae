@@ -209,3 +209,21 @@ and [Chai](https://github.com/chaijs/chai) into a pull request or an issue.
     ```
 
 ## Additional Notes
+
+### Issue and Pull Request Labels
+
+This section lists all labels use to help us to track and manage issues and pull request.
+If you have any suggestions for new labels, check if the an existing label can replace your new label
+and if the response is no, please open an issue to discuss about the pertinence of the new label.
+
+Label name | Description
+---------|----------
+ `enhancement` | New feature or request
+ `bug` | Something isn't working
+ `question` | Further information is requested
+ `help wanted` | Extra attention is needed
+ `duplicate` | This issue or pull request already exists
+ `wontfix` | This will not be worked on
+ `invalid` | This doesn't seem right
+ `documentation` | Improvements or additions to documentation
+ `good first issue` | Good for newcomers
