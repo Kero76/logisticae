@@ -64,9 +64,10 @@ This version is update after each release of the API.
 
 You can see more information about versions on the [CHANGELOG.md](https://github.com/Kero76/logisticae/blob/master/CHANGELOG.md).
 
-- v0.3.0 : Stringae update.
-- V0.2.0 : Physicae update.
-- V0.1.0 : Mathematicae update.
+- v0.4.0 : Documentae update
+- v0.3.0 : Stringae update
+- V0.2.0 : Physicae update
+- V0.1.0 : Mathematicae update
 
 ## License
 
