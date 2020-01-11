@@ -6,11 +6,65 @@ The following is a set of guideline for contributing to Logisticae project.
 These are mostly a guidelines, not rules.
 You are free to change the content of this document in a pull request if you would add some other detail about contributing.
 
-TOC HERE!!!!
+## Table of Content
+
+- [Contributing to Logisticae project](#contributing-to-logisticae-project)
+  - [Table of Content](#table-of-content)
+  - [Code of Conduct](#code-of-conduct)
+  - [How Can I Contribute ?](#how-can-i-contribute)
+    - [Reporting Bugs](#reporting-bugs)
+    - [Suggesting Enhancements](#suggesting-enhancements)
+    - [Your First Code Contribution](#your-first-code-contribution)
+    - [Pull Request](#pull-request)
+  - [Styleguides](#styleguides)
+    - [Git Commit Messages](#git-commit-messages)
+    - [JavaScript / Typescript Styleguide](#javascript--typescript-styleguide)
+    - [Unit Tests &amp; Specs Styleguides](#unit-tests-amp-specs-styleguides)
+    - [Documentation Styleguide](#documentation-styleguide)
+  - [Additional Notes](#additional-notes)
+    - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
 
 ## Code of Conduct
 
-## How Can I Contribute?
+This project and everyone participating in it is governed by the [CONTRIBUTING.md](https://github.com/Kero76/logisticae/blob/master/CODE_OF_CONDUCT.md).
+By participating, you are expected to uphold this code. Please report unacceptable behavior to <nic.gille@gmail.com>
+
+## How Can I Contribute ?
+
+### Reporting Bugs
+
+To reporting a bug, you just follow these steps :
+
+1. Check if the bug is already find on a issue
+2. If the bug is not reported yet, create an issue thanks to the [bug report](https://github.com/Kero76/.github/blob/master/.github/.github/issue_template/bug_report.md) template
+
+### Suggesting Enhancements
+
+To suggest on enhancement, you just follow these steps :
+
+1. Check if the enhancement is already present in the issue or pull request
+2. If the feature is not reporter yet, you can create an issue thanks to the [feature request](https://github.com/Kero76/.github/blob/master/.github/.github/issue_template/feature_request.md) template
+
+### Your First Code Contribution
+
+### Pull Request
+
+The process described here has several goals :
+
+- Maintain Logisticae quality
+- Add new features on project or improve performance of the library
+- Fix problems that are important to users
+
+To this, you must respect the following rules :
+
+1. Create the pull request thanks to the template:
+   - [Feature request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/feature_request.md)
+   - [Bug fix request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/bug_fix.md)
+   - [Performance improvement request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/performance_improvement.md)
+   - [Documentation request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/documentation.md)
+2. Develop your feature and bug fix into a specific branch
+3. Follow the [styleguides](#styleguides) to write your commit commit
+4. Submitting your pull request
 
 ## Styleguides
 
