@@ -1,8 +1,4 @@
----
-name: Bug report
-about: Create a report to help us improve
-
----
+# :bug: Bug report
 
 <!--
 
@@ -13,6 +9,7 @@ Have you read Logisticae's Code of Conduct? By filing an Issue, you are expected
 ### Prerequisites
 
 * [ ] Put an X between the brackets on this line if you have done all of the following:
+  * Using a stable version and not the one get from `develop`
   * Checked that your issue isn't already filed: <https://github.com/Kero76/logisticae/issues>
 
 ### Description

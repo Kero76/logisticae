@@ -1,8 +1,4 @@
----
-name: Feature request
-about: Suggest an idea for this project
-
----
+# :rocket: Feature request
 
 <!--
 
@@ -10,18 +6,18 @@ Have you read Logisticae's Code of Conduct? By filing an Issue, you are expected
 
 -->
 
-## Summary
+### Revelant Package
+
+<!-- The target of the feature. -->
+
+### Description
 
 <!-- One paragraph explanation of the feature. -->
 
-## Motivation
+### Describe the solution you'd like
 
 <!-- Why are we doing this? What use cases does it support? What is the expected outcome? -->
 
-## Describe alternatives you've considered
-
-<!-- A clear and concise description of the alternative solutions you've considered. Be sure to explain why Logisticae's existing customizability isn't suitable for this feature. -->
-
-## Additional context
+### Additional context
 
 <!-- Add any other context or screenshots about the feature request here. -->
