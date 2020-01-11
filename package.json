@@ -1,6 +1,6 @@
 {
   "name": "@kero76/logisticae",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Library who contains many algorithms about mathematics, physics, electricity, etc",
   "main": "index.js",
   "keywords": [
@@ -22,7 +22,9 @@
   "scripts": {
     "test": "mocha -r ts-node/register ./tests/**/*.ts",
     "coverage": "nyc npm run test",
-    "lint": "eslint src/**/*.ts tests/**/*.ts"
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "build": "tsc",
+    "docs": "npx typedoc --out docs src --mode file --module commonjs"
   },
   "devDependencies": {
     "@types/chai": "^4.2.7",

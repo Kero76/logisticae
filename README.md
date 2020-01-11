@@ -50,23 +50,24 @@ This version is update after each release of the API.
 ## Useful commands
 
 - Command use to compile the project :  
-  `$ tsc`
+  `$ npm run build` or `$ tsc`
 - Command use to execute the unit tests :  
-  `$ npm run test`
+  `$ npm test` or  `$ npm run test`
 - Command use to execute the code coverage :  
   `$ npm run coverage`
 - Command use to execute the linter :  
   `$ npm run lint`
 - Command use to generate the documentation :  
-  `$ npx typedoc --out docs src --mode file --module commonjs`
+  `$ npm run docs` or `$ npx typedoc --out docs src --mode file --module commonjs`
 
 ## Changelog
 
 You can see more information about versions on the [CHANGELOG.md](https://github.com/Kero76/logisticae/blob/master/CHANGELOG.md).
 
-- v0.3.0 : Stringae update.
-- V0.2.0 : Physicae update.
-- V0.1.0 : Mathematicae update.
+- v0.4.0 : Documentae update
+- v0.3.0 : Stringae update
+- V0.2.0 : Physicae update
+- V0.1.0 : Mathematicae update
 
 ## License
 

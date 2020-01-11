@@ -1,6 +1,5 @@
 # Libs get from npm.
 node_modules
 built
-docs
 .nyc_output
 coverage
