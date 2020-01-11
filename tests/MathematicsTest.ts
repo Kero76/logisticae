@@ -1,11 +1,11 @@
-import Mathematics from '../src/Mathematics';
-import { assert, expect, should } from 'chai';
+import { assert } from 'chai';
 import 'mocha';
+import Point from '../src/geometry/Point';
+import Mathematics from '../src/Mathematics';
 
 const maths = new Mathematics();
 
 describe('Mathematics', () => {
-
     describe('pythagoreanTheorem', () => {
         it('(5, 4, 3) should return true', () => {
             const result = maths.pythagoreanTheorem(5, 4, 3);
@@ -30,10 +30,15 @@ describe('Mathematics', () => {
 
             assert.strictEqual(result, 3);
         });
+        it('(5, NaN, 3) should return 4', () => {
+            const result = maths.pythagoreanTheoremConverse(5, NaN, 3);
+
+            assert.strictEqual(result, 4);
+        });
         it('(NaN, 4, NaN) should throw an exception', () => {
             try {
-                maths.pythagoreanTheoremConverse(NaN, 4, NaN)
-            } catch(err) {
+                maths.pythagoreanTheoremConverse(NaN, 4, NaN);
+            } catch (err) {
                 assert.strictEqual(true, err instanceof Error);
             }
         });
@@ -42,7 +47,7 @@ describe('Mathematics', () => {
     describe('interceptTheorem', () => {
         it('(NaN, 5, NaN, 10, 6, 15) should return AD = 2 & AE = 4', () => {
             const result = maths.interceptTheorem(NaN, 5, NaN, 10, 6, 15);
-            
+
             assert.strictEqual(result['ad'], 2);
             assert.strictEqual(result['ab'], 5);
             assert.strictEqual(result['ae'], 4);
@@ -168,7 +173,7 @@ describe('Mathematics', () => {
     describe('interceptTheoremConverse', () => {
         it('(2, 4, 4, 8) should return true', () => {
             const result = maths.interceptTheoremConverse(2, 4, 4, 8);
-            
+
             assert.isTrue(result);
         });
         it('(2, 4, 5, 17) should return false', () => {
@@ -213,5 +218,97 @@ describe('Mathematics', () => {
             assert.strictEqual(result, 30);
         });
     });
-        
+
+    describe('isMersenneNumber', () => {
+        it('isMersenneNumber(3) should return true', () => {
+            const result = maths.isMersenneNumber(3);
+
+            assert.isTrue(result);
+        });
+        it('isMersenneNumber(4) should return true', () => {
+            const result = maths.isMersenneNumber(4);
+
+            assert.isFalse(result);
+        });
+        it('isMersenneNumber(127) should retun true', () => {
+            const result = maths.isMersenneNumber(127);
+
+            assert.isTrue(result);
+        });
+        it('isMersenneNumber(11) should return false', () => {
+            const result = maths.isMersenneNumber(11);
+
+            assert.isFalse(result);
+        });
+    });
+
+    describe('isPrimeNumber', () => {
+        it('isPrimeNumber(2) should return true', () => {
+            const result = maths.isPrimeNumber(2);
+
+            assert.isTrue(result);
+        });
+        it('isPrimeNumber(13) should return true', () => {
+            const result = maths.isPrimeNumber(13);
+
+            assert.isTrue(result);
+        });
+        it('isPrimeNumber(9) should return false', () => {
+            const result = maths.isPrimeNumber(9);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(1) should return false', () => {
+            const result = maths.isPrimeNumber(1);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(-2) should return false', () => {
+            const result = maths.isPrimeNumber(-2);
+
+            assert.isFalse(result);
+        });
+        it('isPrimeNumber(0) should return false', () => {
+            const result = maths.isPrimeNumber(0);
+
+            assert.isFalse(result);
+        });
+    });
+
+    describe('lineSlope', () => {
+        it('Slope returns should be equal to 1', () => {
+            const a = new Point(1, 1);
+            const b = new Point(2, 2);
+
+            const result = maths.lineSlope(a, b);
+
+            assert.strictEqual(result, 1);
+        });
+        it('Slope returns should be equal to -1', () => {
+            const a = new Point(3, 1);
+            const b = new Point(2, 2);
+
+            const result = maths.lineSlope(b, a);
+
+            assert.strictEqual(result, -1);
+        });
+        it("Thrown an Error because it's impossible to divide by 0", () => {
+            const a = new Point(1, 1);
+            const b = new Point(1, 1);
+
+            try {
+                maths.lineSlope(a, b);
+            } catch (err) {
+                assert.strictEqual(true, err instanceof Error);
+            }
+        });
+        it('Slope returns should be equal to 0.4', () => {
+            const a = new Point(-4, 2);
+            const b = new Point(1, 4);
+
+            const result = maths.lineSlope(a, b);
+
+            assert.strictEqual(result, 0.4);
+        });
+    });
 });

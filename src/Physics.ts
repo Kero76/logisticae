@@ -1,59 +1,114 @@
-import { EnumUnit, DistanceUnit, LiterUnit, WeightUnit } from "./ConverterUnits";
+import { DegreeUnit, DistanceUnit, EnumUnit, LiterUnit, WeightUnit } from './ConverterUnits';
+import MathHelper from './helpers/MathHelper';
 
 /**
  * Class who contains all elements relatives to the Physics sciences.
- * 
+ *
  * @author Nicolas GILLE <nic.gille@gmail.com>
  * @since 0.2.0
- * @version 1.0
+ * @version 1.1
  * @license MIT
  */
 export default class Physics {
+    /**
+     * Value of the absolute zero in kelvin.
+     *
+     * @since 0.4.0
+     * @version 1.0
+     */
+    static ABSOLUTE_ZERO = -273.15;
 
     /**
      * Constructor of the Physics objects.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
-    constructor() { }
+    constructor() {}
 
     /**
      * Convert a value from a weight, a distance or a liter unit into an another unit.
-     * 
-     * @param {number} value 
-     *  Value of the initial unit to convert. In the example define 
-     * @param {EnumUnit} initialUnit 
-     *  The initial unit. 
-     * @param {EnumUnit} targetUnit 
+     *
+     * @param {number} value
+     *  Value of the initial unit to convert.
+     * @param {EnumUnit} initialUnit
+     *  The initial unit.
+     * @param {EnumUnit} targetUnit
      *  The target unit.
      * @returns {number}
      *  A number which represent the value for the targetUnit.
-     * @throws {Error} 
+     * @throws {Error}
      *  Will throw an error if the EnumUnit are not the same.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
     convert(value: number, initialUnit: EnumUnit, targetUnit: EnumUnit): number {
-        if ((initialUnit instanceof DistanceUnit && targetUnit instanceof DistanceUnit) || 
+        if (
+            (initialUnit instanceof DistanceUnit && targetUnit instanceof DistanceUnit) ||
             (initialUnit instanceof LiterUnit && targetUnit instanceof LiterUnit) ||
-            (initialUnit instanceof WeightUnit && targetUnit instanceof WeightUnit))
+            (initialUnit instanceof WeightUnit && targetUnit instanceof WeightUnit)
+        )
             return (value * initialUnit.value) / targetUnit.value;
-        else
-            throw new Error("Unit not implemented in converter.");
+        else throw new Error('Unit not implemented in converter.');
+    }
+
+    /**
+     * Convert a temperature to another degrees unit.
+     *
+     * @param {number} value
+     *  Value of the initial unit to convert.
+     * @param {EnumUnit} initialUnit
+     *  The initial unit.
+     * @param {EnumUnit} targetUnit
+     *  The target unit.
+     * @returns {number}
+     *  A number which represent the value for the targetUnit.
+     *
+     * @since 0.4.0
+     * @version 1.0
+     */
+    convertDegree(value: number, initialUnit: EnumUnit, targetUnit: EnumUnit) {
+        if (initialUnit instanceof DegreeUnit && targetUnit instanceof DegreeUnit) {
+            // Kelvin to another unit.
+            if (initialUnit.symbol == DegreeUnit.KELVIN.symbol) {
+                if (targetUnit.symbol == DegreeUnit.CELSIUS.symbol) {
+                    return MathHelper.floor(value + Physics.ABSOLUTE_ZERO);
+                } else {
+                    return MathHelper.floor(value * 1.8 - 459.67);
+                }
+            }
+
+            // Celsius to another unit.
+            if (initialUnit.symbol == DegreeUnit.CELSIUS.symbol) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
+                    return value - Physics.ABSOLUTE_ZERO;
+                } else {
+                    return MathHelper.floor(value * 1.8 + 32);
+                }
+            }
+
+            // Fahrenheit to another unit.
+            if (initialUnit.symbol == DegreeUnit.FAHRENHEIT.symbol) {
+                if (targetUnit.symbol == DegreeUnit.KELVIN.symbol) {
+                    return MathHelper.floor((value + 459.15) / 1.8);
+                } else {
+                    return MathHelper.floor((value - 32) / 1.8);
+                }
+            }
+        } else throw new Error('Unit not implemented in converter.');
     }
 
     /**
      * Compute the voltage from the power and the intensity.
-     * 
-     * @param {number} power 
+     *
+     * @param {number} power
      *  The power in watt.
-     * @param {number} intensity 
+     * @param {number} intensity
      *  The intensity in ampere.
      * @returns {number}
      *  The voltage in volt.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -63,14 +118,14 @@ export default class Physics {
 
     /**
      * Compute the voltage from the resistance and the intensity.
-     * 
-     * @param {number} power 
+     *
+     * @param {number} power
      *  The resistance in ohm.
-     * @param {number} intensity 
+     * @param {number} intensity
      *  The intensity in ampere.
      * @returns {number}
      *  The voltage in volt.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -80,10 +135,10 @@ export default class Physics {
 
     /**
      * Compute the voltage from the power and the resistance.
-     * 
-     * @param {number} power 
+     *
+     * @param {number} power
      *  The power in watt.
-     * @param {number} resistance 
+     * @param {number} resistance
      *  The resistance in ohm.
      * @returns {number}
      *  The voltage in volt.
@@ -97,14 +152,14 @@ export default class Physics {
 
     /**
      * Compute the intensity in function of the power and the voltage.
-     * 
-     * @param {number} power 
+     *
+     * @param {number} power
      *  The power in watt.
-     * @param {number} voltage 
+     * @param {number} voltage
      *  The voltage in volt.
      * @returns {number}
      *  The intensity in ampere.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -114,14 +169,14 @@ export default class Physics {
 
     /**
      * Compute the intensity in function of the voltage and the resistance.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      *  The voltage in volt
-     * @param {number} resistance 
+     * @param {number} resistance
      *  The resistance in ohm.
      * @returns {number}
      *  The intensity in ampere.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -131,14 +186,14 @@ export default class Physics {
 
     /**
      * Compute the intensity in function of the power and the resistance.
-     * 
-     * @param {number} power 
+     *
+     * @param {number} power
      *  The power in watt.
-     * @param {number} resistance 
+     * @param {number} resistance
      *  The resistance in ohm.
      * @returns {number}
      *  The intensity in ampere.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -148,14 +203,14 @@ export default class Physics {
 
     /**
      * Compute the poower in function of the voltage and the resstance.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      * The voltage in volt.
-     * @param {number} intensity 
+     * @param {number} intensity
      *  The intensity in ampere.
      * @returns {number}
      *  The power in ohm.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -165,14 +220,14 @@ export default class Physics {
 
     /**
      * Compute the power in function of the resistance and the intensity.
-     * 
-     * @param {number} resistance 
+     *
+     * @param {number} resistance
      *  The resistance in ohm.
-     * @param {number} intensity 
+     * @param {number} intensity
      *  The intensity in ampere.
      * @returns {number}
      *  The power in watt.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -182,14 +237,14 @@ export default class Physics {
 
     /**
      * Compute the power in function of the voltage and the resistance.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      *  The voltage in volt.
-     * @param {number} resistance 
+     * @param {number} resistance
      *  The resistance in ohm.
      * @returns {number}
-     *  The power in watt. 
-     * 
+     *  The power in watt.
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -199,14 +254,14 @@ export default class Physics {
 
     /**
      * Compute the resistance in function of the voltage and the intensity.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      *  The voltage in volt.
-     * @param {number} intensity 
+     * @param {number} intensity
      *  The intensity in ampere.
      * @returns {number}
      *  The resistance in ohm.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -216,14 +271,14 @@ export default class Physics {
 
     /**
      * Compute the resistance in function of the voltage and the intensity.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      *  The voltage in volt.
-     * @param {number} power 
+     * @param {number} power
      *  The power in watt.
      * @returns {number}
      *  The resistance in ohm.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
@@ -233,14 +288,14 @@ export default class Physics {
 
     /**
      * Compute the resistance in function of the power and the intensity.
-     * 
-     * @param {number} voltage 
+     *
+     * @param {number} voltage
      *  The power in watt.
-     * @param {number} power 
+     * @param {number} power
      *  The intensity in ampere.
      * @returns {number}
      *  The resistance in ohm.
-     * 
+     *
      * @since 0.2.0
      * @version 1.0
      */
