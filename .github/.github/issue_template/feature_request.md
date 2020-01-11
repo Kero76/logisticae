@@ -20,7 +20,7 @@ Have you read Logisticae's Code of Conduct? By filing an Issue, you are expected
 
 ## Describe alternatives you've considered
 
-<!-- A clear and concise description of the alternative solutions you've considered. Be sure to explain why Atom's existing customizability isn't suitable for this feature. -->
+<!-- A clear and concise description of the alternative solutions you've considered. Be sure to explain why Logisticae's existing customizability isn't suitable for this feature. -->
 
 ## Additional context
 

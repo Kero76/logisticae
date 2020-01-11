@@ -4,7 +4,7 @@
 * The pull request must contribute a change that has been endorsed by the maintainer team. See details in the template below.
 * After you create the pull request, all status checks must be pass before a maintainer reviews your contribution. For more details, please see <https://github.com/Kero76/logisticae/blob/master/CONTRIBUTING.md#pull-requests>.
 
-### Issue or RFC Endorsed by Atom's Maintainers
+### Issue or RFC Endorsed by Logisticae's Maintainers
 
 <!--
 
