@@ -28,4 +28,32 @@ TOC HERE!!!!
   - [Config] when improving configuration file like package.json, rules in linter, adding dependencies, ...
   - [Doc] when you writing some documentation as typescript doc, Readme, changelog, ...
 
+### JavaScript / Typescript Styleguide
+
+All JavaScript using the default configuration offer by EsLint.
+A new style of linter can be used instead if it is not suitable.
+It is therefore possible to discuss it in an issue or through a pull request.
+
+About style:
+
+- Inline `export` with expressions whenever possible
+
+```typescript
+// Use this:
+export default class ClassName {
+
+}
+
+// Instead of:
+class ClassName {
+
+}
+export default ClassName
+```
+
+- Place class properties properties in the following order:
+  - Class methods and properties (methods starting with `static`)
+  - Instance methods and properties
+- Avoid plat-form dependent code
+
 ## Additional Notes
