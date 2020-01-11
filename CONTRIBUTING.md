@@ -20,7 +20,7 @@ TOC HERE!!!!
 - Use the imperative mood ("Update algorithm ..." not "Updates algorithms ...")
 - Try to limit the number of character on the first line of the commit
 - Reference issues and pull request liberally after the first line
-- Consider starting the commit message with 1 word or 2 words between square brackets "[keyword1(, keyword2)]":
+- Consider starting the commit message with 1 word or 2 words between square brackets "[keyword1(, keyword2)]" :
   - [Feat] when adding new feature
   - [Fix] when you fix a bug.
   - [Test] when you're adding new tests
@@ -55,5 +55,38 @@ export default ClassName
   - Class methods and properties (methods starting with `static`)
   - Instance methods and properties
 - Avoid plat-form dependent code
+
+### Unit Tests & Specs Styleguides
+
+The unit test using [Mocha](https://github.com/mochajs/mocha) and [Chai](https://github.com/chaijs/chai) libraries.
+The unit tests respect the following formatting :
+
+```typescript
+describe('ClasssName', () => {
+
+    describe('First method', () => {
+        it('A sentence who explain the result of the test expected', () => {
+            // Code of the test here ...
+        });
+        it('Another sentence to test another result expected', () => {
+            // Code of the test here ...
+        });
+    });
+
+    describe('Second method', () => {
+        it('A sentence who explain the result of the test expected', () => {
+            // Code of the test here ...
+        });
+        it('Another sentence to test another result expected', () => {
+            // Code of the test here ...
+        });
+    });
+
+    // Same syntax for each method you test.
+```
+
+Like the linter, the test syntax can evolved after discussion.
+So don't hesitate to propose your own test syntax using [Mocha](https://github.com/mochajs/mocha)
+and [Chai](https://github.com/chaijs/chai) into a pulle request or an issue.
 
 ## Additional Notes
