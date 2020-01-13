@@ -9,9 +9,10 @@
     "**/*.ts"
   ],
   "exclude": [
-    "coverage/**",
-    "node_modules/**",
     "built/**",
+    "coverage/**",
+    "docs/**",
+    "node_modules/**",
     "**/*.d.ts",
     "**/*.test.ts"
   ],
