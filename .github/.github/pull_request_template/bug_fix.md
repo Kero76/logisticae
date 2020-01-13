@@ -1,7 +1,7 @@
 ### Requirements for Contributing a Bug Fix
 
 * Fill out the template below. Any pull request that does not include enough information to be reviewed in a timely manner may be closed at the maintainers' discretion.
-* The pull request must only fix an existing bug. To contribute other changes, you must use a different template. You can see all templates at <https://github.com/Kero76/.github/tree/master/.github/pull_request_template>.
+* The pull request must only fix an existing bug. To contribute other changes, you must use a different template. You can see all templates at <https://github.com/Kero76/logisticae/tree/master/.github/.github/pull_request_template>.
 * After you create the pull request, all status checks must be pass before a maintainer reviews your contribution. For more details, please see <https://github.com/Kero76/logisticae/blob/master/CONTRIBUTING.md#pull-requests>.
 
 ### Identify the Bug
