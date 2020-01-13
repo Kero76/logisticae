@@ -1,6 +1,59 @@
-# Changelog
+## Table of Release
 
-## V0.4.0 - Documentae update
+- [Table of Release](#table-of-release)
+  - [V0.1.0 - Mathematicae update](#v010---mathematicae-update)
+    - [Features](#features)
+  - [V0.2.0 - Physicae update](#v020---physicae-update)
+    - [Features](#features-1)
+  - [V0.3.0 - Stringae update](#v030---stringae-update)
+    - [Features](#features-2)
+  - [V0.4.0 - Documentae update](#v040---documentae-update)
+    - [Features](#features-3)
+    - [Developer's features](#developers-features)
+    - [Community features](#community-features)
+
+---
+
+### V0.1.0 - Mathematicae update
+
+*Release on December 18, 2019*
+
+#### Features
+
+- Initial configuration project.
+- Add the following *mathematics* algorithms :
+  - Pythagorean Theorem and his converse.
+  - Intercept Theorem  also known as Thales's Theorem and his converse.
+  - Euclidean algorithm to compute the Greatest Common Divisor between 2 numbers.
+  - LCM algorithm to compute the Least Common Multiple between 2 numbers.
+
+---
+
+### V0.2.0 - Physicae update
+
+*Release on December 21, 2019*
+
+#### Features
+
+- Implementation of a simple converter to convert distance, liter or weight unit into another one.
+- Implementation of the Ohm's law.
+
+---
+
+### V0.3.0 - Stringae update
+
+*Release on December 23, 2019*
+
+#### Features
+
+- Implementation of an algorithm to reverse a text.
+- Implementation of an algorithm to check if a text is a palindrome.
+
+---
+
+### V0.4.0 - Documentae update
+
+*Release on January 11, 2020*
 
 #### Features
 
@@ -22,28 +75,3 @@
 - Add the Code of Conduct file for the project
 - Add CONTRIBUTING.md for people who would contribute to the project Logisticae
 - Add default template for issues and pull requests
-
-## V0.3.0 - Stringae update
-
-#### Features
-
-- Implementation of an algorithm to reverse a text.
-- Implementation of an algorithm to check if a text is a palindrome.
-
-## V0.2.0 - Physicae update
-
-#### Features
-
-- Implementation of a simple converter to convert distance, liter or weight unit into another one.
-- Implementation of the Ohm's law.
-
-## V0.1.0 - Mathematicae update
-
-#### Features
-
-- Initial configuration project.
-- Add the following *mathematics* algorithms :
-  - Pythagorean Theorem and his converse.
-  - Intercept Theorem  also known as Thales's Theorem and his converse.
-  - Euclidean algorithm to compute the Greatest Common Divisor between 2 numbers.
-  - LCM algorithm to compute the Least Common Multiple between 2 numbers.
