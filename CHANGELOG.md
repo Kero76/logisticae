@@ -11,6 +11,8 @@
     - [Features](#features-3)
     - [Developer's features](#developers-features)
     - [Community features](#community-features)
+  - [V0.5.0 - XXX](#v050---xxx)
+    - [Features](#features-4)
 
 ---
 
@@ -75,3 +77,13 @@
 - Add the Code of Conduct file for the project
 - Add CONTRIBUTING.md for people who would contribute to the project Logisticae
 - Add default template for issues and pull requests
+
+---
+
+### V0.5.0 - XXX
+
+*Currently in development*
+
+#### Features
+
+- [Mathematics] - Implementation of the Fibonacci Number algorithm.

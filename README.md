@@ -1,3 +1,4 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Kero76/logisticae/CI)
 [![npm version](https://img.shields.io/npm/v/@kero76/logisticae)](https://www.npmjs.com/package/@kero76/logisticae)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Kero76/logisticae/blob/master/LICENSE)
 

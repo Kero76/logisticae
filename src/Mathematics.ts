@@ -282,6 +282,50 @@ export default class Mathematics {
         return (b.y - a.y) / (b.x - a.x);
     }
 
+    /**
+     * Compute the *size* element of the fibonacci sequence.
+     *
+     * @param size {number}
+     *  The number of element must be compute and returns
+     * @param hasNegativeValue {boolean}
+     *  Return also the negative number.
+     * @returns {Array}
+     *  An array with all computed value.
+     *
+     * @since 0.5.0
+     * @version 1.0
+     */
+    fibonacci(size: number, hasNegativeValue: boolean = false): Array<number> {
+        let fibonacci = new Array<number>();
+        fibonacci.push(1);
+        fibonacci.push(1);
+
+        size = size - 2; // Remove the two '1' present to start the algorithm.
+
+        // Return only the two first number of the suite.
+        if (size < 3) return fibonacci;
+
+        // Compute positive value.
+        for (let i = 0; i < size; ++i) {
+            let val = fibonacci[i] + fibonacci[i + 1];
+            fibonacci.push(val);
+        }
+
+        // Compute negative value
+        if (hasNegativeValue) {
+            let j = 0;
+
+            while (j <= size) {
+                let val = fibonacci[1] - fibonacci[0];
+                fibonacci.unshift(val);
+
+                j++;
+            }
+        }
+
+        return fibonacci;
+    }
+
     // Private functions //
     /**
      * Compute a cross multiplication.

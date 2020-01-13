@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { assert, expect } from 'chai';
 import 'mocha';
 import Point from '../src/geometry/Point';
 import Mathematics from '../src/Mathematics';
@@ -309,6 +309,40 @@ describe('Mathematics', () => {
             const result = maths.lineSlope(a, b);
 
             assert.strictEqual(result, 0.4);
+        });
+    });
+
+    describe('fibonacci', () => {
+        it('Should return [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]', () => {
+            const expectedArray = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+
+            const result = maths.fibonacci(10);
+
+            assert.strictEqual(10, result.length);
+            expect(result).to.eql(expectedArray);
+            expect(result).to.have.ordered.members(expectedArray);
+        });
+        it('Should return [1, 1]', () => {
+            const result = maths.fibonacci(0);
+
+            assert.strictEqual(2, result.length);
+            expect(result).to.eql([1, 1]);
+        });
+        it('Should return [-3, 2, -1, 1, 0, 1, 1, 2, 3, 5, 8]', () => {
+            const expectedArray = [-3, 2, -1, 1, 0, 1, 1, 2, 3, 5, 8];
+
+            const result = maths.fibonacci(6, true);
+
+            assert.strictEqual(11, result.length);
+            expect(result).to.eql(expectedArray);
+            expect(result).to.have.ordered.members(expectedArray);
+        });
+        it('Should return [1, 1] with hasNegativeValue set to true', () => {
+            const result = maths.fibonacci(2, true);
+
+            assert.strictEqual(2, result.length);
+            expect(result).to.eql([1, 1]);
+            expect(result).to.have.ordered.members([1, 1]);
         });
     });
 });
