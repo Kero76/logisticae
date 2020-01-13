@@ -311,13 +311,11 @@ export default class Mathematics {
             fibonacci.push(val);
         }
 
-        console.log(fibonacci);
-
         // Compute negative value
         if (hasNegativeValue) {
             let j = 0;
 
-            while (j < size) {
+            while (j <= size) {
                 let val = fibonacci[1] - fibonacci[0];
                 fibonacci.unshift(val);
 
