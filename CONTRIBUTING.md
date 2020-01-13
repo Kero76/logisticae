@@ -19,7 +19,7 @@ You are free to change the content of this document in a pull request if you wou
   - [Styleguides](#styleguides)
     - [Git Commit Messages](#git-commit-messages)
     - [JavaScript / Typescript Styleguide](#javascript--typescript-styleguide)
-    - [Unit Tests &amp; Specs Styleguides](#unit-tests-amp-specs-styleguides)
+    - [Unit Tests & Specs Styleguides](#unit-tests--specs-styleguides)
     - [Documentation Styleguide](#documentation-styleguide)
   - [Additional Notes](#additional-notes)
     - [Issue and Pull Request Labels](#issue-and-pull-request-labels)
@@ -36,14 +36,14 @@ By participating, you are expected to uphold this code. Please report unacceptab
 To reporting a bug, you just follow these steps :
 
 1. Check if the bug is already find on a issue
-2. If the bug is not reported yet, create an issue thanks to the [bug report](https://github.com/Kero76/.github/blob/master/.github/.github/issue_template/bug_report.md) template
+2. If the bug is not reported yet, create an issue thanks to the [bug report](https://github.com/Kero76/logisticae/blob/master/.github/.github/issue_template/bug_report.md) template
 
 ### Suggesting Enhancements
 
 To suggest on enhancement, you just follow these steps :
 
 1. Check if the enhancement is already present in the issue or pull request
-2. If the feature is not reporter yet, you can create an issue thanks to the [feature request](https://github.com/Kero76/.github/blob/master/.github/.github/issue_template/feature_request.md) template
+2. If the feature is not reporter yet, you can create an issue thanks to the [feature request](https://github.com/Kero76/logisticae/blob/master/.github/.github/issue_template/feature_request.md) template
 
 ### Your First Code Contribution
 
@@ -58,10 +58,10 @@ The process described here has several goals :
 To this, you must respect the following rules :
 
 1. Create the pull request thanks to the template:
-   - [Feature request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/feature_request.md)
-   - [Bug fix request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/bug_fix.md)
-   - [Performance improvement request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/performance_improvement.md)
-   - [Documentation request](https://github.com/Kero76/.github/blob/master/.github/.github/pull_request_template/documentation.md)
+   - [Feature request](https://github.com/Kero76/logisticae/blob/master/.github/.github/pull_request_template/feature_change.md)
+   - [Bug fix request](https://github.com/Kero76/logisticae/blob/master/.github/.github/pull_request_template/bug_fix.md)
+   - [Performance improvement request](https://github.com/Kero76/logisticae/blob/master/.github/.github/pull_request_template/performance_improvement.md)
+   - [Documentation request](https://github.com/Kero76/logisticae/blob/master/.github/.github/pull_request_template/documentation.md)
 2. Develop your feature and bug fix into a specific branch
 3. Follow the [styleguides](#styleguides) to write your commit commit
 4. Submitting your pull request

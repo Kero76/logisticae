@@ -15,7 +15,7 @@ Link to the issue or RFC that your change relates to. This must be one of the fo
 
 To contribute an enhancement that isn't covered by one of the items above, please follow our guide for suggesting an enhancement: https://github.com/Kero76/logisticae/blob/master/CONTRIBUTING.md#suggesting-enhancements
 
-To contribute other changes, you must use a different template. You can see all templates at https://github.com/Kero76/.github/tree/master/.github/pull_request_template.
+To contribute other changes, you must use a different template. You can see all templates at https://github.com/Kero76/logisticae/tree/master/.github/.github/pull_request_template.
 
 -->
 
