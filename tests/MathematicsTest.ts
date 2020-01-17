@@ -345,4 +345,37 @@ describe('Mathematics', () => {
             expect(result).to.have.ordered.members([1, 1]);
         });
     });
+
+    describe('isCyclopsNumber', () => {
+        it('404 Should return true', () => {
+            const result = maths.isCyclopsNumber(404);
+
+            assert.isTrue(result);
+        });
+        it('200 should return true', () => {
+            const result = maths.isCyclopsNumber(200);
+
+            assert.isTrue(result);
+        });
+        it('0 should return true', () => {
+            const result = maths.isCyclopsNumber(0);
+
+            assert.isTrue(result);
+        });
+        it('1234 should return false', () => {
+            const result = maths.isCyclopsNumber(1234);
+
+            assert.isFalse(result);
+        });
+        it('123 should return false', () => {
+            const result = maths.isCyclopsNumber(123);
+
+            assert.isFalse(result);
+        });
+        it('1 should return false', () => {
+            const result = maths.isCyclopsNumber(1);
+
+            assert.isFalse(result);
+        });
+    });
 });

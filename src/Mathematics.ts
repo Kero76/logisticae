@@ -326,6 +326,33 @@ export default class Mathematics {
         return fibonacci;
     }
 
+    /**
+     * Check if a number is a cyclops number.
+     *
+     * A cyclops number is a number who contains only one "0" and
+     * his instance appear precisely in the middle of the number.
+     *
+     * @param n {number}
+     *  Number n to check is a cyclops number.
+     * @returns {boolean}
+     *  True if the number is a cyclops number, false in other case.
+     *
+     * @since 0.5.0
+     * @version 1.0
+     */
+    isCyclopsNumber(n: number): boolean {
+        const nbString = n.toString();
+
+        // Check if the number is even.
+        if (nbString.length % 2 === 0) return false;
+
+        // Check
+        const middle = nbString.length === 1 ? 0 : nbString.length / 2;
+        if (nbString.substr(middle, 1) !== '0') return false;
+
+        return true;
+    }
+
     // Private functions //
     /**
      * Compute a cross multiplication.
