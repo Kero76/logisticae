@@ -1,3 +1,17 @@
+# Ignore folders 
 .git
+.github/
+.nyc_output/
+/built
+/coverage
 /docs
 /node_modules
+
+# Ignore files
+.eslintignore
+.eslintrc.json
+.prettierrc.json
+.nycrc
+.prettierignore
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
